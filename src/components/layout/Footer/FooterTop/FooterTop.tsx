@@ -1,4 +1,4 @@
-import ButtonScrollTo from "../../../utils/ButtonScrollTo/ButtonScrollTo";
+import ButtonMain from "../../../utils/ButtonMain/ButtonMain";
 
 const FooterTop = () => {
 	return (
@@ -15,19 +15,19 @@ const FooterTop = () => {
 					<strong>PAGES</strong>
 					<ul>
 						<li>
-							<ButtonScrollTo />
+							<ButtonMain />
 						</li>
 						{/* Home */}
 						<li>
-							<ButtonScrollTo />
+							<ButtonMain />
 						</li>
 						{/* Service */}
 						<li>
-							<ButtonScrollTo />
+							<ButtonMain />
 						</li>
 						{/* Book */}
 						<li>
-							<ButtonScrollTo />
+							<ButtonMain />
 						</li>
 						{/* Contact */}
 					</ul>

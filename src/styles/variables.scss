@@ -1,26 +1,49 @@
 // MAIN COLORS
 
-$primary-color: #000000;
+$primary-color: #718e7c;
+$secondary-color: #d2e8db;
 
 // TEXT & BACKGROUND COLORS
 
-$background-basic: #333;
+$background-basic: #fafafa;
+$background-secondary: #f1fcfa;
+$background-tertiary: #a5a5ab;
 
-$text-color-primary: #000000;
-$text-color-secondary: #000000;
+$text-main: #070707;
+$text-light: #f1fafa;
+$text-muted: #a5a5ab;
+$text-accent: #777980;
+$text-secondary: #4a4c56;
 
-$alert-color: #000000;
-$success-color: #000000;
+$alert-color: #80ffb0;
+$success-color: #ff8680;
 
 // FONTS
 @font-face {
 	font-family: "Beautique-Display";
-	src: url("../assets/fonts/Beautique-Display/Beautique-Display-Regular.otf")
+	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplay-Regular.otf")
+		format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+// @font-face {
+// 	font-family: "Beautique-Display-Condensed";
+// 	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplayCondensed-Regular.otf")
+// 		format("opentype");
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+@font-face {
+	font-family: "Dancing-Script";
+	src: url("../assets/fonts/Dancing-Script/Dancing-Script-Regular.otf")
 		format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
 
 $font-main: "Beautique-Display", sans-serif;
+$font-logo: "Dancing-Script", sans-serif;
 
 $font-size-md: 18px;
