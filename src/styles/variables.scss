@@ -1,0 +1,26 @@
+// MAIN COLORS
+
+$primary-color: #000000;
+
+// TEXT & BACKGROUND COLORS
+
+$background-basic: #333;
+
+$text-color-primary: #000000;
+$text-color-secondary: #000000;
+
+$alert-color: #000000;
+$success-color: #000000;
+
+// FONTS
+@font-face {
+	font-family: "Beautique-Display";
+	src: url("../assets/fonts/Beautique-Display/Beautique-Display-Regular.otf")
+		format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font-main: "Beautique-Display", sans-serif;
+
+$font-size-md: 18px;
