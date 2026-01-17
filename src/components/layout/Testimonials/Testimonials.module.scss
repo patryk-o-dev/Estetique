@@ -1,0 +1,67 @@
+@use "../../../styles/variables.scss" as vars;
+
+.testimonials {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-xl;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: vars.$spacing-2xl vars.$spacing-3xl;
+}
+
+.title {
+	font-family: vars.$font-main;
+	font-size: vars.$font-3xl;
+	color: vars.$text-main;
+	text-align: left;
+}
+
+.testimonial {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 550px;
+	gap: vars.$spacing-xl;
+	img {
+		width: 30%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: vars.$spacing-md;
+	}
+}
+
+.testimonialContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 70%;
+
+	p {
+		font-size: vars.$font-xl;
+		color: vars.$text-accent;
+		line-height: 1.6;
+	}
+}
+
+.clientInfo {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-xs;
+
+	h3 {
+		font-size: vars.$font-2xl;
+		color: vars.$primary-color;
+	}
+
+	p {
+		font-size: vars.$font-md;
+		color: vars.$text-muted;
+	}
+}
+
+.testimonialFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

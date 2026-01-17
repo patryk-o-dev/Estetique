@@ -5,6 +5,7 @@ import LeftBottom from "../../../assets/images/about/LeftBottom.png";
 import LeftTop from "../../../assets/images/about/LeftTop.png";
 import RightBottom from "../../../assets/images/about/RightBottom.png";
 import RightTop from "../../../assets/images/about/RightTop.jpg";
+import AboutDecor from "../../../assets/images/about/AboutDecor.png";
 
 const About = () => {
 	return (
@@ -22,8 +23,8 @@ const About = () => {
 					src={RightBottom}
 					alt="Right Bottom"
 				/>
-				<img src="" alt="" />
 				<div className={styles.text}>
+					<img src={AboutDecor} alt="About Decor" />
 					<h4>
 						Learn <span>About Us</span>
 					</h4>
