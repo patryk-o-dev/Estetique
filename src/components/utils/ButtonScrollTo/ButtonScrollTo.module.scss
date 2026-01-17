@@ -1,6 +1,10 @@
+@use "../../../styles/variables.scss" as vars;
+
 .buttonScrollTo {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: transparent;
+  color: vars.$text-light;
 }

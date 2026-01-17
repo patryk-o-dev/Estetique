@@ -3,12 +3,14 @@
 .navbar {
 	height: 80px;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: transparent;
+	backdrop-filter: blur(7px);
 	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: vars.$text-light 1px solid;
+	z-index: 99;
 }
 
 .navbarContent {
