@@ -1,0 +1,100 @@
+@use "../../../styles/variables.scss" as vars;
+
+.about {
+	position: relative;
+}
+
+.content {
+	height: 100%;
+	min-height: 1000px;
+	width: 100%;
+	min-width: 760px;
+	aspect-ratio: 16 / 10;
+	position: relative;
+	margin: 0 auto;
+}
+
+.imgLeftTop {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: clamp(210px, 20%, 450px);
+	aspect-ratio: 1 / 1;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.imgRightTop {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	width: clamp(210px, 20%, 450px);
+	aspect-ratio: 1 / 1;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.imgLeftBottom {
+	position: absolute;
+	bottom: 10%;
+	left: 17%;
+	width: clamp(180px, 17%, 410px);
+	aspect-ratio: 1.1 / 1;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.imgRightBottom {
+	position: absolute;
+	bottom: 12%;
+	right: 18%;
+	width: clamp(180px, 17%, 410px);
+	aspect-ratio: 1.1 / 1;
+
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	max-width: 700px;
+
+	h4 {
+		font-family: vars.$font-main;
+		font-size: vars.$font-3xl;
+		color: vars.$text-main;
+		margin-bottom: vars.$spacing-sm;
+
+		span {
+			color: vars.$primary-color;
+		}
+	}
+
+	p {
+		font-family: vars.$font-main;
+		font-size: vars.$font-lg;
+		color: vars.$text-secondary;
+		margin-bottom: vars.$spacing-md;
+		line-height: 1.6;
+	}
+}
+
+.imgCenterLeft {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%) rotateY(180deg) rotate(15deg);
+	width: 19%;
+}
+
+.imgCenterRight {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 19%;
+}
