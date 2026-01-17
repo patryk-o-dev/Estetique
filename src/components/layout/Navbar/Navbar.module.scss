@@ -1,0 +1,43 @@
+@use "../../../styles/variables.scss" as vars;
+
+.navbar {
+	height: 80px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: vars.$text-light 1px solid;
+}
+
+.navbarContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 82.5%;
+	height: 48px;
+	span {
+		color: vars.$text-light;
+	}
+}
+
+.navItems {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	gap: 16px;
+}
+
+.navLinks {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+
+.navList {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	gap: vars.$spacing-md;
+}
