@@ -1,13 +1,26 @@
 import BookingForm from "../../features/BookingForm/BookingForm";
+import Transition from "../../utils/Transition/Transition";
+import styles from "./Booking.module.scss";
+import backgroundImage from "../../../assets/images/booking/sectionBackground.png";
 
 const Booking = () => {
 	return (
-		<section>
-			<div>
-				<h4>Booking</h4>
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<section className={styles.booking}>
+			<div className={styles.backgroundImage}>
+				<div className={styles.gradient}></div>
+				<img src={backgroundImage} alt="Booking Background" />
 			</div>
-			<BookingForm />
+			<div className={styles.content}>
+				<div className={styles.textBox}>
+					<h4>Book a session in minutes</h4>
+					<p>
+						Choose your preferred date and time. We will confirm availability by
+						email or phone.
+					</p>
+				</div>
+				<BookingForm />
+			</div>
+			<Transition />
 		</section>
 	);
 };
