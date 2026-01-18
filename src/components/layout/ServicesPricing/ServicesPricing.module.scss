@@ -1,0 +1,124 @@
+@use "../../../styles/variables.scss" as vars;
+
+.servicesPricing {
+	height: 90vh;
+	min-height: 900px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	background-color: vars.$background-secondary;
+	gap: vars.$spacing-3xl;
+	padding: vars.$spacing-2xl vars.$spacing-3xl;
+  overflow: hidden;
+}
+
+.images {
+	position: relative;
+	width: 45%;
+	height: 90%;
+
+	.imgBack {
+		position: absolute;
+		width: 91%;
+		height: 75%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+
+	.imgFront {
+		position: absolute;
+		height: 72%;
+		width: 57%;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+		border: vars.$spacing-xs solid vars.$background-secondary;
+		object-fit: cover;
+	}
+}
+
+.content {
+	width: 55%;
+}
+
+.title {
+	font-size: vars.$font-3xl;
+	span {
+		display: block;
+		color: vars.$primary-color;
+		letter-spacing: 1px;
+	}
+}
+
+.pricingBox {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-lg;
+	img {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		object-fit: contain;
+		filter: grayscale(100%) opacity(0.5);
+		pointer-events: none;
+	}
+}
+
+.pricingList {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-md;
+}
+
+.serviceItem {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-xs;
+
+	p {
+		font-size: vars.$font-md;
+		color: vars.$text-accent;
+	}
+}
+
+.serviceHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+	h4 {
+		font-size: vars.$font-xl;
+		flex: 5;
+	}
+}
+
+.price {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: vars.$spacing-xs;
+	flex: 3;
+
+	.separator {
+		width: 50%;
+		height: 3px;
+		background: linear-gradient(
+			90deg,
+      transparent 0%,
+			vars.$secondary-color 20%,
+			vars.$primary-color 70%,
+		);
+		border-radius: 2px;
+	}
+
+	span {
+		color: vars.$text-main;
+		font-size: vars.$font-lg;
+	}
+}
