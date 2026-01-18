@@ -27,13 +27,21 @@ $success-color: #ff8680;
 	font-style: normal;
 }
 
-// @font-face {
-// 	font-family: "Beautique-Display-Condensed";
-// 	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplayCondensed-Regular.otf")
-// 		format("opentype");
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: "Beautique-Display-Bold";
+	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplay-Bold.otf")
+		format("opentype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Beautique-Display-Light";
+	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplay-Light.otf")
+		format("opentype");
+	font-weight: light;
+	font-style: normal;
+}
 
 @font-face {
 	font-family: "Dancing-Script";
@@ -44,6 +52,8 @@ $success-color: #ff8680;
 }
 
 $font-main: "Beautique-Display", sans-serif;
+$font-main-bold: "Beautique-Display-Bold", sans-serif;
+$font-main-light: "Beautique-Display-Light", sans-serif;
 $font-logo: "Dancing-Script", sans-serif;
 
 $font-xs: 12px;

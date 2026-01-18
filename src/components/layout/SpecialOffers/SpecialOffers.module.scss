@@ -1,0 +1,68 @@
+@use "../../../styles/variables.scss" as vars;
+
+.specialOffers {
+	height: 80vh;
+	gap: vars.$spacing-xl;
+	position: relative;
+}
+
+.videoContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	flex: 0;
+	pointer-events: none;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+.video {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	height: 100%;
+  margin: 0 auto;
+	gap: vars.$spacing-2xl;
+	img {
+		height: 75%;
+		z-index: 2;
+		flex: 1;
+		object-fit: cover;
+    width: clamp(200px, 50%, 600px);
+	}
+}
+
+.textContent {
+	flex: 2;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-sm;
+	h3 {
+		font-family: vars.$font-main-bold;
+		font-size: vars.$font-3xl;
+		color: vars.$text-light;
+	}
+	p {
+		font-family: vars.$font-main-light;
+		font-size: vars.$font-lg;
+		color: vars.$text-light;
+    letter-spacing: 1px;
+	}
+}
