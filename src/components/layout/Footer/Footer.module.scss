@@ -1,0 +1,21 @@
+@use "../../../styles/variables.scss" as vars;
+
+.footer {
+	position: relative;
+	overflow: hidden;
+	padding: vars.$spacing-xl vars.$spacing-3xl;
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-2xl;
+}
+
+.footerBgcVector {
+	position: absolute;
+	top: vars.$spacing-xl;
+	left: vars.$spacing-3xl;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.4;
+	filter: brightness(0) saturate(100%) invert(60%) sepia(6%) saturate(1197%)
+		hue-rotate(90deg) brightness(88%) contrast(86%);
+}

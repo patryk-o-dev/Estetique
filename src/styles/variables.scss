@@ -9,14 +9,14 @@ $background-basic: #fafafa;
 $background-secondary: #eaf3f2;
 $background-tertiary: #a5a5ab;
 
-$text-main: #070707;
+$text-main: #1d1f2c;
 $text-light: #f1fafa;
 $text-muted: #a5a5ab;
 $text-accent: #777980;
 $text-secondary: #4a4c56;
 
-$alert-color: #80ffb0;
-$success-color: #ff8680;
+$success-color: #80ffb0;
+$alert-color: #ff8680;
 
 // FONTS
 @font-face {
@@ -40,14 +40,6 @@ $success-color: #ff8680;
 	src: url("../assets/fonts/BeautiqueDisplay/BeautiqueDisplay-Light.otf")
 		format("opentype");
 	font-weight: light;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Dancing-Script";
-	src: url("../assets/fonts/Dancing-Script/Dancing-Script-Regular.otf")
-		format("opentype");
-	font-weight: normal;
 	font-style: normal;
 }
 

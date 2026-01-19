@@ -1,0 +1,104 @@
+@use "../../../../styles/variables.scss" as vars;
+
+.footerBottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footerBottomLeft {
+	flex: 1;
+}
+
+.logo {
+	font-size: vars.$font-4xl;
+	color: vars.$text-main;
+}
+
+.footerBottomRight {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	gap: vars.$spacing-2xl;
+}
+
+.locationSection {
+	display: flex;
+	gap: vars.$spacing-2xl;
+	width: 100%;
+	justify-content: space-between;
+
+	strong {
+		font-family: vars.$font-main-bold;
+		font-size: vars.$font-lg;
+		color: vars.$text-main;
+		line-height: 1.6;
+	}
+
+	.mapPlaceholder {
+		display: flex;
+		justify-content: flex-end;
+		align-self: flex-end;
+
+		img {
+			height: 100%;
+			max-height: 200px;
+			aspect-ratio: 2 / 1;
+			border-radius: 10px;
+		}
+	}
+}
+
+.newsletterSection {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: vars.$spacing-sm;
+	border-top: 1px solid rgba(vars.$primary-color, 0.2);
+	width: 100%;
+	padding-top: vars.$spacing-sm;
+
+	strong {
+		font-family: vars.$font-main-bold;
+		font-size: vars.$font-md;
+		color: vars.$text-main;
+		margin-bottom: vars.$spacing-sm;
+	}
+}
+
+.newsletterForm {
+	display: flex;
+	gap: vars.$spacing-sm;
+	width: 100%;
+	border: 1px solid vars.$secondary-color;
+	padding: vars.$spacing-xs vars.$spacing-xs vars.$spacing-xs vars.$spacing-lg;
+	background-color: vars.$background-secondary;
+
+	input {
+		flex: 1;
+		font-size: vars.$font-sm;
+		border: none;
+		background-color: transparent;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	button {
+		padding: vars.$spacing-xs vars.$spacing-lg;
+		background-color: vars.$primary-color;
+		color: vars.$text-light;
+		width: 120px;
+		border: none;
+		cursor: pointer;
+		font-size: vars.$font-md;
+		font-weight: 400;
+		line-height: 1.6;
+		letter-spacing: 1px;
+		font-family: vars.$font-main-light;
+	}
+}

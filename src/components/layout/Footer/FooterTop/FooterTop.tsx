@@ -1,19 +1,23 @@
 import ButtonMain from "../../../utils/ButtonMain/ButtonMain";
+import styles from "./FooterTop.module.scss";
+import mailIcon from "../../../../assets/icons/mail.png";
+import phoneIcon from "../../../../assets/icons/phone.png";
+import locationIcon from "../../../../assets/icons/location.png";
 
 const FooterTop = () => {
 	return (
-		<div>
-			<div>
+		<div className={styles.footerTop}>
+			<div className={styles.leftSection}>
 				<h3>Book your appointment today for a refreshing experience</h3>
 				<p>
 					A modern beauty salon offering personalized treatments in a relaxing
 					space.
 				</p>
 			</div>
-			<div>
-				<div>
-					<strong>PAGES</strong>
-					<ul>
+			<div className={styles.rightSection}>
+				<div className={styles.infoElement}>
+					<strong className={styles.sectionTitle}>PAGES</strong>
+					<ul className={styles.pagesList}>
 						<li>
 							<ButtonMain />
 						</li>
@@ -32,23 +36,24 @@ const FooterTop = () => {
 						{/* Contact */}
 					</ul>
 				</div>
-				<div>
-					<strong>Contact</strong>
-					<ul>
+				<div className={styles.infoElement}>
+					<strong className={styles.sectionTitle}>Contact</strong>
+					<ul className={styles.contactList}>
 						<li>
-							<img src="" alt="" /> contact@logo.ch
+							<img src={mailIcon} alt="Mail Icon" /> contact@logo.ch
 						</li>
 						<li>
-							<img src="" alt="" /> 123456789
+							<img src={phoneIcon} alt="Phone Icon" /> 123456789
 						</li>
 						<li>
-							<img src="" alt="" /> Marszałkowska 21/37, Warszawa
+							<img src={locationIcon} alt="Location Icon" /> Marszałkowska
+							21/37, Warszawa
 						</li>
 					</ul>
 				</div>
-				<div>
-					<strong>Social</strong>
-					<ul>
+				<div className={styles.infoElement}>
+					<strong className={styles.sectionTitle}>Social</strong>
+					<ul className={styles.socialList}>
 						<li>
 							<a href="#">Instagram</a>
 						</li>
