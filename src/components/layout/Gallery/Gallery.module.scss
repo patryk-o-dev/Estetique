@@ -1,0 +1,97 @@
+@use "../../../styles//variables.scss" as vars;
+
+.gallery {
+	height: 60vh;
+	margin: vars.$spacing-xl 0;
+	overflow: hidden;
+}
+
+.title {
+	font-size: vars.$font-3xl;
+	margin-left: vars.$spacing-3xl;
+	height: 60px;
+	span {
+		color: vars.$primary-color;
+	}
+}
+
+.images {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: calc(60vh - 60px);
+}
+
+.imagesContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 90px 0;
+	width: 100%;
+	gap: vars.$spacing-lg;
+
+	img {
+		height: 100%;
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+	}
+}
+
+.topEclipseContainer {
+	width: 100%;
+	position: relative;
+}
+
+.eclipseTopOuter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120%;
+	margin-left: -10%;
+	height: 10vh;
+	border-bottom: 1px solid vars.$primary-color;
+	border-radius: 100%;
+	z-index: 2;
+}
+
+.eclipseTopInner {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 120%;
+	margin-left: -10%;
+	height: 10vh;
+	background-color: vars.$background-basic;
+	border-radius: 100%;
+	z-index: 1;
+}
+
+.bottomEclipseContainer {
+	width: 100%;
+	position: relative;
+}
+
+.eclipseBottomOuter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 120%;
+	margin-left: -10%;
+	height: 10vh;
+	border-radius: 100%;
+	border-top: 1px solid vars.$primary-color;
+	z-index: 2;
+}
+
+.eclipseBottomInner {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	width: 120%;
+	margin-left: -10%;
+	height: 10vh;
+	background-color: vars.$background-basic;
+	border-radius: 100%;
+	z-index: 1;
+}
