@@ -1,8 +1,8 @@
-import ButtonMain from "../../../utils/ButtonMain/ButtonMain";
 import styles from "./FooterTop.module.scss";
 import mailIcon from "../../../../assets/icons/mail.png";
 import phoneIcon from "../../../../assets/icons/phone.png";
 import locationIcon from "../../../../assets/icons/location.png";
+import ButtonScrollTo from "../../../utils/ButtonScrollTo/ButtonScrollTo";
 
 const FooterTop = () => {
 	return (
@@ -19,19 +19,19 @@ const FooterTop = () => {
 					<strong className={styles.sectionTitle}>PAGES</strong>
 					<ul className={styles.pagesList}>
 						<li>
-							<ButtonMain />
+							<ButtonScrollTo section="Home" text="Home" />
 						</li>
 						{/* Home */}
 						<li>
-							<ButtonMain />
+							<ButtonScrollTo section="Services" text="Services" />
 						</li>
 						{/* Service */}
 						<li>
-							<ButtonMain />
+							<ButtonScrollTo section="Booking" text="Booking" />
 						</li>
 						{/* Book */}
 						<li>
-							<ButtonMain />
+							<ButtonScrollTo section="Contact" text="Contact" />
 						</li>
 						{/* Contact */}
 					</ul>

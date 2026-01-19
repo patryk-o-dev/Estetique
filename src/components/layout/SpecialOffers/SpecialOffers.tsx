@@ -21,9 +21,16 @@ const SpecialOffers = () => {
 				<div className={styles.textContent}>
 					<h3>Special Offers</h3>
 					<p>
-						20% off your first visit, Free consultation with selected	treatments
+						20% off your first visit, Free consultation with selected treatments
 					</p>
-					<ButtonMain />
+					<div>
+						<ButtonMain
+							section="Booking"
+							text="Book Appointment"
+							bgc="transparent"
+							action="scroll"
+						/>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -24,16 +24,16 @@ const About = () => {
 					alt="Right Bottom"
 				/>
 				<div className={styles.text}>
-					<img src={AboutDecor} alt="About Decor" />
+					<img className={styles.aboutDecor} src={AboutDecor} alt="About Decor" />
 					<h4>
 						Learn <span>About Us</span>
 					</h4>
-					<p>
+					<p className={styles.aboutParagraph}>
 						We believe beauty is about confidence and care. Our salon provides
 						high-quality treatments designed to enhance your natural glow in a
 						calm and welcoming environment.
 					</p>
-					<ButtonMain />
+					<ButtonMain section="Footer" text="More About Us" bgc="primary" action="scroll" />
 				</div>
 			</div>
 			<img className={styles.imgCenterLeft} src={Center} alt="Center Left" />

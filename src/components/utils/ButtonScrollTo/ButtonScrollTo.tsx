@@ -1,17 +1,17 @@
 import styles from "./ButtonScrollTo.module.scss";
 
-type ButtonScrollToProps = { sectionName: string };
+type ButtonScrollToProps = { section: string; text: string };
 
-const ButtonScrollTo = ({ sectionName }: ButtonScrollToProps) => {
+const ButtonScrollTo = ({ section, text }: ButtonScrollToProps) => {
 	const handleScrollTo = (section: string) => {
 		console.log(`Scrolling to ${section}`);
 	};
 	return (
 		<button
 			className={styles.buttonScrollTo}
-			onClick={() => handleScrollTo(sectionName)}
+			onClick={() => handleScrollTo(section)}
 		>
-			{sectionName}
+			{text}
 		</button>
 	);
 };

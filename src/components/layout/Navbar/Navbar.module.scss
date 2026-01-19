@@ -42,4 +42,13 @@
 	flex-direction: row;
 	list-style: none;
 	gap: vars.$spacing-md;
+
+	button {
+		color: vars.$text-light;
+		font-size: vars.$font-md;
+		font-family: vars.$font-main-light;
+		line-height: 1.6;
+		letter-spacing: 1px;
+		cursor: pointer;
+	}
 }

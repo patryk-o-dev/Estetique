@@ -1,0 +1,61 @@
+@use "../../../styles//variables.scss" as vars;
+
+.buttonMainWrapper {
+	position: relative;
+	display: inline-block;
+  
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		pointer-events: none;
+	}
+}
+
+.buttonMain {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 7px;
+	padding: vars.$spacing-sm vars.$spacing-xs vars.$spacing-sm vars.$spacing-lg;
+	height: 48px;
+	width: fit-content;
+
+	p {
+		color: vars.$text-light;
+		line-height: 1.6;
+		letter-spacing: 1px;
+		text-align: center;
+		font-family: vars.$font-main-light;
+		font-size: vars.$font-md;
+	}
+}
+
+.arrowContainer {
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+	padding: 3px;
+	background-color: vars.$background-basic;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 16px;
+		height: 8px;
+		rotate: -42deg;
+	}
+}
+
+.transparent {
+	background-color: transparent;
+	border: 1px solid vars.$text-muted;
+}

@@ -60,7 +60,7 @@ const ServicesPricing = () => {
 							</li>
 						))}
 					</ul>
-					<ButtonMain />
+					<ButtonMain text="View More Services" bgc="primary" action="none" />
 				</div>
 			</div>
 		</section>

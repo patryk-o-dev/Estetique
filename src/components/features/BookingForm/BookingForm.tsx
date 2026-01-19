@@ -13,7 +13,7 @@ const BookingForm = () => {
 			<input type="text" name="service" />
 			<label>Message</label>
 			<textarea name="message"></textarea>
-			<ButtonMain />
+			<ButtonMain text="Book Appointment" bgc="primary" action="book" />
 		</form>
 	);
 };

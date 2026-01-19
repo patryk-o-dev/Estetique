@@ -11,20 +11,25 @@ const Navbar = () => {
 					<nav className={styles.navLinks}>
 						<ul className={styles.navList}>
 							<li>
-								<ButtonScrollTo sectionName="About" />
+								<ButtonScrollTo section="About" text="About" />
 							</li>
 							<li>
-								<ButtonScrollTo sectionName="Services" />
+								<ButtonScrollTo section="Services" text="Services" />
 							</li>
 							<li>
-								<ButtonScrollTo sectionName="Gallery" />
+								<ButtonScrollTo section="Gallery" text="Gallery" />
 							</li>
 							<li>
-								<ButtonScrollTo sectionName="Contact" />
+								<ButtonScrollTo section="Contact" text="Contact" />
 							</li>
 						</ul>
 					</nav>
-					<ButtonMain />
+					<ButtonMain
+						section="Booking"
+						text="Book Appointment"
+						bgc="primary"
+						action="scroll"
+					/>
 				</div>
 			</div>
 		</div>

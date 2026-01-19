@@ -14,7 +14,14 @@ const Hero = () => {
 				<h3>
 					Where Beauty Meets <br /> Calm Elegance
 				</h3>
-				<ButtonMain />
+				<div>
+					<ButtonMain
+						section="Booking"
+						text="Book Appointment"
+						bgc="transparent"
+						action="scroll"
+					/>
+				</div>
 			</div>
 			<div className={styles.heroImageFull}>
 				<img src={imgFull} alt="Full hero" />

@@ -53,6 +53,19 @@
 	flex-direction: column;
 	gap: vars.$spacing-sm;
 	list-style: none;
+
+	button {
+		color: vars.$text-accent;
+		font-size: vars.$font-md;
+		font-family: vars.$font-main;
+		letter-spacing: 1px;
+		line-height: 1.6;
+	}
+
+	button:hover {
+		color: vars.$alert-color;
+		cursor: pointer;
+	}
 }
 
 .contactList {
