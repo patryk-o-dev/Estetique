@@ -43,6 +43,11 @@
 	width: 55%;
 }
 
+.buttonArrowContainer {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .title {
 	font-size: vars.$font-3xl;
 	span {

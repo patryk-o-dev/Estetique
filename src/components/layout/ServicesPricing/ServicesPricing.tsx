@@ -40,7 +40,9 @@ const ServicesPricing = () => {
 				<img src={imgFront} alt="Foreground" className={styles.imgFront} />
 			</div>
 			<div className={styles.content}>
-				<ButtonArrow />
+				<div className={styles.buttonArrowContainer}>
+					<ButtonArrow />
+				</div>
 				<div className={styles.pricingBox}>
 					<h3 className={styles.title}>
 						Relax & Rejuvenate <span>Expert Spa Treatments</span>
