@@ -34,7 +34,7 @@ const ServicesPricing = () => {
 		},
 	];
 	return (
-		<section className={styles.servicesPricing}>
+		<section className={styles.servicesPricing} id="Services">
 			<div className={styles.images}>
 				<img src={imgBack} alt="Background" className={styles.imgBack} />
 				<img src={imgFront} alt="Foreground" className={styles.imgFront} />

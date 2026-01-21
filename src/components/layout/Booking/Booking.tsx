@@ -5,7 +5,7 @@ import backgroundImage from "../../../assets/images/booking/sectionBackground.pn
 
 const Booking = () => {
 	return (
-		<section className={styles.booking}>
+		<section className={styles.booking} id="Booking">
 			<div className={styles.backgroundImage}>
 				<div className={styles.gradient}></div>
 				<img src={backgroundImage} alt="Booking Background" />

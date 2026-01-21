@@ -1,5 +1,7 @@
 import styles from "./ButtonMain.module.scss";
 import imgArrow from "../../../assets/icons/mainButtonArrow.png";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/all";
 
 type ButtonMainProps = {
 	section?: string;
@@ -9,14 +11,24 @@ type ButtonMainProps = {
 };
 
 const ButtonMain = ({ section, text, bgc, action }: ButtonMainProps) => {
-	const handleAction = () => {
-		if (action === "scroll") {
-			return () => {
-				console.log(`Scrolling to ${section}`);
-			};
+	gsap.registerPlugin(ScrollToPlugin);
+
+	const handleAction = (e: React.MouseEvent<HTMLButtonElement>) => {
+		if (action === "scroll" && section) {
+			e.preventDefault();
+			const target = document.getElementById(section);
+			if (target) {
+				gsap.to(window, {
+					duration: 1,
+					scrollTo: { y: target, offsetY: 0 },
+					ease: "power2.out",
+				});
+			}
 		} else if (action === "book") {
 			return () => {
-				console.log(`Sending appointment information`);
+				console.log(
+					`Sending appointment information and showing booking popup`,
+				);
 			};
 		} else {
 			return () => {};
@@ -27,7 +39,7 @@ const ButtonMain = ({ section, text, bgc, action }: ButtonMainProps) => {
 		<div className={styles.buttonMainWrapper}>
 			<button
 				className={`${styles.buttonMain} ${styles[bgc]}`}
-				onClick={handleAction()}
+				onClick={(e) => handleAction(e)}
 			>
 				<p>{text}</p>
 				<div className={styles.arrowContainer}>

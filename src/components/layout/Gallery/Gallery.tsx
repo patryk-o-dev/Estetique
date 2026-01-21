@@ -6,7 +6,7 @@ import galleryimg4 from "../../../assets/images/gallery/gallery4.jpg";
 
 const Gallery = () => {
 	return (
-		<div className={styles.gallery}>
+		<div className={styles.gallery} id="Gallery">
 			<h2 className={styles.title}>
 				Our <span>Gallery</span>
 			</h2>

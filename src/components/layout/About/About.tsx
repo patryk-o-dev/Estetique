@@ -9,7 +9,7 @@ import AboutDecor from "../../../assets/images/about/AboutDecor.png";
 
 const About = () => {
 	return (
-		<section className={styles.about}>
+		<section className={styles.about} id="About">
 			<div className={styles.content}>
 				<img className={styles.imgLeftTop} src={LeftTop} alt="Left Top" />
 				<img className={styles.imgRightTop} src={RightTop} alt="Right Top" />

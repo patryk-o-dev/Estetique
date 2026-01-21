@@ -1,16 +1,26 @@
 import styles from "./ButtonScrollTo.module.scss";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/all";
 
 type ButtonScrollToProps = { section: string; text: string };
 
 const ButtonScrollTo = ({ section, text }: ButtonScrollToProps) => {
-	const handleScrollTo = (section: string) => {
-		console.log(`Scrolling to ${section}`);
+	gsap.registerPlugin(ScrollToPlugin);
+
+	const handleScrollTo = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		const target = document.getElementById(section);
+		if (target) {
+			gsap.to(window, {
+				duration: 1,
+				scrollTo: { y: target, offsetY: 0 },
+				ease: "power2.out",
+			});
+		}
 	};
+
 	return (
-		<button
-			className={styles.buttonScrollTo}
-			onClick={() => handleScrollTo(section)}
-		>
+		<button className={styles.buttonScrollTo} onClick={handleScrollTo}>
 			{text}
 		</button>
 	);
