@@ -95,3 +95,10 @@
 	border-radius: 100%;
 	z-index: 1;
 }
+
+.drag-proxy {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: grab;
+}
