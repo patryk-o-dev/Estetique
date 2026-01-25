@@ -10,7 +10,7 @@
 	background-color: vars.$background-secondary;
 	gap: vars.$spacing-3xl;
 	padding: vars.$spacing-2xl vars.$spacing-3xl;
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .images {
@@ -59,10 +59,10 @@
 
 .pricingBox {
 	position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: vars.$spacing-lg;
-	img {
+	display: flex;
+	flex-direction: column;
+	gap: vars.$spacing-lg;
+	.servicesBackground {
 		position: absolute;
 		height: 100%;
 		top: 0;
@@ -115,9 +115,9 @@
 		height: 3px;
 		background: linear-gradient(
 			90deg,
-      transparent 0%,
+			transparent 0%,
 			vars.$secondary-color 20%,
-			vars.$primary-color 70%,
+			vars.$primary-color 70%
 		);
 		border-radius: 2px;
 	}

@@ -149,7 +149,7 @@ const ServicesPricing = () => {
 					<h3 className={styles.title}>
 						Relax & Rejuvenate <span>Expert Spa Treatments</span>
 					</h3>
-					<img src={servicesBackground} alt="Background" />
+					<img className={styles.servicesBackground} src={servicesBackground} alt="Background" />
 					<ul className={styles.pricingList} ref={listRef}>
 						{visibleServices.map((service, index) => (
 							<li key={index} className={styles.serviceItem}>
@@ -164,7 +164,12 @@ const ServicesPricing = () => {
 							</li>
 						))}
 					</ul>
-					<ButtonMain text="View More Services" bgc="primary" action="none" />
+					<ButtonMain
+						section="Contact"
+						text="Contact Us"
+						bgc="primary"
+						action="scroll"
+					/>
 				</div>
 			</div>
 		</section>

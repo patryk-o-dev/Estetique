@@ -24,7 +24,11 @@ const About = () => {
 					alt="Right Bottom"
 				/>
 				<div className={styles.text}>
-					<img className={styles.aboutDecor} src={AboutDecor} alt="About Decor" />
+					<img
+						className={styles.aboutDecor}
+						src={AboutDecor}
+						alt="About Decor"
+					/>
 					<h4>
 						Learn <span>About Us</span>
 					</h4>
@@ -33,7 +37,7 @@ const About = () => {
 						high-quality treatments designed to enhance your natural glow in a
 						calm and welcoming environment.
 					</p>
-					<ButtonMain section="Footer" text="More About Us" bgc="primary" action="scroll" />
+					<ButtonMain text="More About Us" bgc="primary" action="link" />
 				</div>
 			</div>
 			<img className={styles.imgCenterLeft} src={Center} alt="Center Left" />
