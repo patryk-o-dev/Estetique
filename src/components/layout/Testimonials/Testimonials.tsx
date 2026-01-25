@@ -1,26 +1,133 @@
-import ButtonArrow from "../../utils/ButtonArrow/ButtonArrow";
 import styles from "./Testimonials.module.scss";
 import testimonialImg from "../../../assets/images/tesimonials/testimonials.png";
+import gsap from "gsap";
+import { useRef, useState } from "react";
+import ButtonArrow from "../../utils/ButtonArrow/ButtonArrow";
+
+const testimonialsData = [
+	{
+		img: testimonialImg,
+		text: `The atmosphere is calm and beautifully designed.The staff truly listens to your needs and preferences.Every visit feels relaxing and personalized. Highly recommended for anyone seeking quality care. The booking process was quick and easy.`,
+		name: "Alex Johnson",
+		service: "FaceSpa Service",
+	},
+	{
+		img: testimonialImg,
+		text: `Absolutely love this place! The team is so professional and friendly. My skin has never looked better. I always look forward to my appointments!`,
+		name: "Maria Nowak",
+		service: "Skin Therapy",
+	},
+	{
+		img: testimonialImg,
+		text: `Wonderful experience every time. The treatments are top-notch and the ambiance is so relaxing. Highly recommend!`,
+		name: "John Smith",
+		service: "Massage",
+	},
+];
 
 const Testimonials = () => {
+	const [current, setCurrent] = useState(0);
+	const textRef = useRef<HTMLParagraphElement>(null);
+	const clientInfoRef = useRef<HTMLDivElement>(null);
+
+	const handleNext = () => {
+		if (textRef.current) {
+			gsap.fromTo(
+				textRef.current,
+				{ x: 0, opacity: 1 },
+				{
+					x: "100%",
+					opacity: 0,
+					duration: 0.5,
+					onComplete: () => {
+						setCurrent((prev) => (prev + 1) % testimonialsData.length);
+						gsap.fromTo(
+							textRef.current,
+							{ x: "-100%", opacity: 0 },
+							{ x: 0, opacity: 1, duration: 0.5 },
+						);
+					},
+				},
+			);
+		}
+
+		if (clientInfoRef.current) {
+			gsap.fromTo(
+				clientInfoRef.current,
+				{ y: 0, scale: 1, opacity: 1 },
+				{
+					opacity: 0,
+					scale: 0,
+					duration: 0.5,
+					onComplete: () => {
+						gsap.fromTo(
+							clientInfoRef.current,
+							{ y: "100%", scale: 1, opacity: 0 },
+							{ y: 0, scale: 1, opacity: 1, duration: 0.5 },
+						);
+					},
+				},
+			);
+		}
+	};
+
+	const handlePrev = () => {
+		if (textRef.current) {
+			gsap.fromTo(
+				textRef.current,
+				{ x: 0, opacity: 1 },
+				{
+					x: "-100%",
+					opacity: 0,
+					duration: 0.5,
+					onComplete: () => {
+						setCurrent(
+							(prev) =>
+								(prev - 1 + testimonialsData.length) % testimonialsData.length,
+						);
+						gsap.fromTo(
+							textRef.current,
+							{ x: "100%", opacity: 0 },
+							{ x: 0, opacity: 1, duration: 0.5 },
+						);
+					},
+				},
+			);
+		}
+
+		if (clientInfoRef.current) {
+			gsap.fromTo(
+				clientInfoRef.current,
+				{ y: 0, scale: 1, opacity: 1 },
+				{
+					opacity: 0,
+					scale: 0,
+					duration: 0.5,
+					onComplete: () => {
+						gsap.fromTo(
+							clientInfoRef.current,
+							{ y: "100%", scale: 1, opacity: 0 },
+							{ y: 0, scale: 1, opacity: 1, duration: 0.5 },
+						);
+					},
+				},
+			);
+		}
+	};
+
 	return (
 		<section className={styles.testimonials}>
 			<h2 className={styles.title}>What Our Clients Say</h2>
 			<div className={styles.testimonial}>
-				<img src={testimonialImg} alt="Client testimonial" />
+				<img src={testimonialsData[current].img} alt="Client testimonial" />
 				<div className={styles.testimonialContent}>
-					<p>
-						"The atmosphere is calm and beautifully designed.The staff truly
-						listens to your needs and preferences.Every visit feels relaxing and
-						personalized. Highly recommended for anyone seeking quality care.
-						The booking process was quick and easy."
-					</p>
+					<p ref={textRef}>"{testimonialsData[current].text}"</p>
 					<div className={styles.testimonialFooter}>
-						<div className={styles.clientInfo}>
-							<h3>- Alex Johnson</h3>
-							<p>FaceSpa Service</p>
+						<div className={styles.clientInfo} ref={clientInfoRef}>
+							<h3>- {testimonialsData[current].name}</h3>
+							<p>{testimonialsData[current].service}</p>
 						</div>
-						<ButtonArrow />
+						<ButtonArrow onRightClick={handleNext} onLeftClick={handlePrev} />
 					</div>
 				</div>
 			</div>
