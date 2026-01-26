@@ -15,7 +15,7 @@ const ServicesPricing = () => {
 			price: 50.0,
 		},
 		{
-			title: "Facial & Massage",
+			title: "Facialąśęćżł i Massage",
 			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			price: 90.0,
 		},
@@ -146,15 +146,15 @@ const ServicesPricing = () => {
 					<ButtonArrow onLeftClick={handlePrev} onRightClick={handleNext} />
 				</div>
 				<div className={styles.pricingBox}>
-					<h3 className={styles.title}>
+					<h2 className={styles.title}>
 						Relax & Rejuvenate <span>Expert Spa Treatments</span>
-					</h3>
+					</h2>
 					<img className={styles.servicesBackground} src={servicesBackground} alt="Background" />
 					<ul className={styles.pricingList} ref={listRef}>
 						{visibleServices.map((service, index) => (
 							<li key={index} className={styles.serviceItem}>
 								<div className={styles.serviceHeader}>
-									<h4>{service.title}</h4>
+									<h3>{service.title}</h3>
 									<div className={styles.price}>
 										<div className={styles.separator}></div>
 										<span>${service.price}</span>

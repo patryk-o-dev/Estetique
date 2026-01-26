@@ -29,9 +29,9 @@ const About = () => {
 						src={AboutDecor}
 						alt="About Decor"
 					/>
-					<h4>
-						Learn <span>About Us</span>
-					</h4>
+					<h2>
+						Learn <span>About Uśźćóąćłęs</span>
+					</h2>
 					<p className={styles.aboutParagraph}>
 						We believe beauty is about confidence and care. Our salon provides
 						high-quality treatments designed to enhance your natural glow in a

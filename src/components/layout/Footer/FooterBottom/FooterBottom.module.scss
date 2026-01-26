@@ -31,7 +31,6 @@
 	justify-content: space-between;
 
 	strong {
-		font-family: vars.$font-main-bold;
 		font-size: vars.$font-lg;
 		color: vars.$text-main;
 		line-height: 1.6;
@@ -62,7 +61,6 @@
 	padding-top: vars.$spacing-sm;
 
 	strong {
-		font-family: vars.$font-main-bold;
 		font-size: vars.$font-md;
 		color: vars.$text-main;
 		margin-bottom: vars.$spacing-sm;
@@ -99,6 +97,5 @@
 		font-weight: 400;
 		line-height: 1.6;
 		letter-spacing: 1px;
-		font-family: vars.$font-main-light;
 	}
 }

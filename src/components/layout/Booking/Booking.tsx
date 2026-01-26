@@ -12,10 +12,10 @@ const Booking = () => {
 			</div>
 			<div className={styles.content}>
 				<div className={styles.textBox}>
-					<h4>Book a session in minutes</h4>
+					<h2>Umów się na wizytę w kilka minut</h2>
 					<p>
-						Choose your preferred date and time. We will confirm availability by
-						email or phone.
+						Wybierz datę i godzinę która ci odpowiada. Potwierdzimy dostępność
+						drogą mailową lub telefoniczną.
 					</p>
 				</div>
 				<BookingForm />

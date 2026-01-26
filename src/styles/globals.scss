@@ -39,7 +39,6 @@ h6,
 span,
 strong {
 	overflow-wrap: break-word;
-	font-family: vars.$font-main;
 }
 
 span,
@@ -60,10 +59,33 @@ h6 {
 	color: vars.$text-main;
 }
 
+h2 {
+	font-family: vars.$font-section-heading;
+}
+
+h3 {
+	font-family: vars.$font-text-light;
+}
+
+p {
+	font-family: vars.$font-text-main;
+}
+
+label, input, textarea, select {
+	font-family: vars.$font-text-light;
+}
+
 button {
 	display: inline-block;
 	background-color: vars.$primary-color;
 	border: none;
+	font-family: vars.$font-text-main;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 // PAGE WRAPPER
@@ -72,5 +94,4 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 	background-color: vars.$background-basic;
-	font-family: vars.$font-main;
 }

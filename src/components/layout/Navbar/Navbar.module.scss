@@ -24,6 +24,15 @@
 	}
 }
 
+.logo {
+	font-size: vars.$font-xl;
+	font-family: vars.$font-main-heading;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: vars.$text-light;
+	cursor: pointer;
+}
+
 .navItems {
 	display: flex;
 	flex-direction: row;
@@ -46,7 +55,6 @@
 	button {
 		color: vars.$text-light;
 		font-size: vars.$font-md;
-		font-family: vars.$font-main-light;
 		line-height: 1.6;
 		letter-spacing: 1px;
 		cursor: pointer;

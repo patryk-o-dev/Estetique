@@ -21,7 +21,7 @@
 	top: 50%;
 	left: 25%;
 	transform: translate(-50%, -50%);
-  z-index: 2;
+	z-index: 2;
 
 	img {
 		height: 100%;
@@ -41,10 +41,11 @@
 	flex-direction: column;
 	gap: vars.$spacing-xs;
 
-	h3 {
+	.motto {
 		font-size: vars.$font-4xl;
 		margin-bottom: vars.$spacing-lg;
 		color: vars.$text-light;
+		font-family: vars.$font-main-heading;
 	}
 }
 

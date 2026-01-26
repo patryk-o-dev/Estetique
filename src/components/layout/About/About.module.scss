@@ -72,8 +72,7 @@
 		width: 100px;
 	}
 
-	h4 {
-		font-family: vars.$font-main;
+	h2 {
 		font-size: vars.$font-3xl;
 		color: vars.$text-main;
 		margin-bottom: vars.$spacing-sm;
@@ -84,7 +83,6 @@
 	}
 
 	.aboutParagraph {
-		font-family: vars.$font-main;
 		font-size: vars.$font-lg;
 		color: vars.$text-secondary;
 		margin-bottom: vars.$spacing-md;

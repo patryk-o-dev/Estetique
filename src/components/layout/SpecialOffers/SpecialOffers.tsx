@@ -19,7 +19,7 @@ const SpecialOffers = () => {
 			<div className={styles.content}>
 				<img src={specialOfferImage} alt="Special Offer" />
 				<div className={styles.textContent}>
-					<h3>Special Offers</h3>
+					<h2>Special Offers</h2>
 					<p>
 						20% off your first visit, Free consultation with selected treatments
 					</p>

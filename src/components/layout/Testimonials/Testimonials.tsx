@@ -124,7 +124,7 @@ const Testimonials = () => {
 					<p ref={textRef}>"{testimonialsData[current].text}"</p>
 					<div className={styles.testimonialFooter}>
 						<div className={styles.clientInfo} ref={clientInfoRef}>
-							<h3>- {testimonialsData[current].name}</h3>
+							<strong>- {testimonialsData[current].name}</strong>
 							<p>{testimonialsData[current].service}</p>
 						</div>
 						<ButtonArrow onRightClick={handleNext} onLeftClick={handlePrev} />

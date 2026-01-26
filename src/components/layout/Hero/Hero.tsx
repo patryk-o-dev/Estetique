@@ -11,13 +11,13 @@ const Hero = () => {
 				<img src={imgSmall} alt="Small hero" />
 			</div>
 			<div className={styles.heroText}>
-				<h3>
-					Where Beauty Meets <br /> Calm Elegance
-				</h3>
+				<p className={styles.motto}>
+					Chwila dla Ciebie <br /> Efekt na długo
+				</p>
 				<div>
 					<ButtonMain
 						section="Booking"
-						text="Book Appointment"
+						text="Zarezerwuj wizytę"
 						bgc="transparent"
 						action="scroll"
 					/>

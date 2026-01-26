@@ -62,7 +62,7 @@
   justify-content: center;
   width: 50%;
 
-	h4 {
+	h2 {
     font-size: vars.$font-3xl;
 		color: vars.$text-light;
     line-height: 1.3;
@@ -70,9 +70,8 @@
 	}
 
 	p {
-    font-size: vars.$font-lg;
+    font-size: vars.$font-md;
 		color: vars.$text-light;
-    font-weight: 500;
     line-height: 1.6;
 	}
 }

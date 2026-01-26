@@ -55,12 +55,10 @@
 	flex-direction: column;
 	gap: vars.$spacing-sm;
 	h3 {
-		font-family: vars.$font-main-bold;
 		font-size: vars.$font-3xl;
 		color: vars.$text-light;
 	}
 	p {
-		font-family: vars.$font-main-light;
 		font-size: vars.$font-lg;
 		color: vars.$text-light;
     letter-spacing: 1px;

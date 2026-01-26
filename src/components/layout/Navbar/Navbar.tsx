@@ -6,27 +6,27 @@ const Navbar = () => {
 	return (
 		<div className={styles.navbar}>
 			<div className={styles.navbarContent}>
-				<span>Esthétique</span>
+				<span className={styles.logo}>Esthétique</span>
 				<div className={styles.navItems}>
 					<nav className={styles.navLinks}>
 						<ul className={styles.navList}>
 							<li>
-								<ButtonScrollTo section="About" text="About" />
+								<ButtonScrollTo section="About" text="O nas" />
 							</li>
 							<li>
-								<ButtonScrollTo section="Services" text="Services" />
+								<ButtonScrollTo section="Services" text="Usługi" />
 							</li>
 							<li>
-								<ButtonScrollTo section="Gallery" text="Gallery" />
+								<ButtonScrollTo section="Gallery" text="Galeria" />
 							</li>
 							<li>
-								<ButtonScrollTo section="Contact" text="Contact" />
+								<ButtonScrollTo section="Contact" text="Kontakt" />
 							</li>
 						</ul>
 					</nav>
 					<ButtonMain
 						section="Booking"
-						text="Book Appointment"
+						text="Zarezerwuj wizytę"
 						bgc="primary"
 						action="scroll"
 					/>

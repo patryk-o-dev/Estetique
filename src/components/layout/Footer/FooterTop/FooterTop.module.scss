@@ -41,7 +41,6 @@
 }
 
 .sectionTitle {
-	font-family: vars.$font-main-bold;
 	font-size: vars.$font-lg;
 	font-weight: 700;
 	margin-bottom: vars.$spacing-sm;
@@ -57,7 +56,6 @@
 	button {
 		color: vars.$text-accent;
 		font-size: vars.$font-md;
-		font-family: vars.$font-main;
 		letter-spacing: 1px;
 		line-height: 1.6;
 	}
