@@ -29,7 +29,7 @@ const About = () => {
 				trigger: imgLeftTopRef.current,
 				start: "top 75%",
 				end: "top top",
-				scrub: 5,
+				scrub: 3,
 			},
 		});
 

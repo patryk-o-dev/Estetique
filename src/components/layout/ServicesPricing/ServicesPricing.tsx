@@ -4,7 +4,7 @@ import imgBack from "../../../assets/images/servicesPricing/servicesPricingBack.
 import imgFront from "../../../assets/images/servicesPricing/servicesPricingFront.png";
 import servicesBackground from "../../../assets/images/servicesPricing/servicesBackground.png";
 import styles from "./ServicesPricing.module.scss";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const ServicesPricing = () => {
@@ -77,45 +77,72 @@ const ServicesPricing = () => {
 	];
 	const ITEMS_PER_PAGE = 5;
 	const [currentPage, setCurrentPage] = useState(0);
+	const [autoScroll, setAutoScroll] = useState(true);
 	const listRef = useRef<HTMLUListElement>(null);
 
 	const maxPage = Math.ceil(services.length / ITEMS_PER_PAGE) - 1;
 
-	const handleNext = () => {
-		if (currentPage < maxPage && listRef.current) {
-			gsap.to(listRef.current, {
-				x: "-30%",
-				opacity: 0,
-				duration: 0.4,
-				onComplete: () => {
+	const handleNext = (isUser = false) => {
+		if (isUser) setAutoScroll(false);
+		if (!listRef.current) return;
+		gsap.to(listRef.current, {
+			x: "-30%",
+			opacity: 0,
+			duration: 0.4,
+			onComplete: () => {
+				if (currentPage === maxPage) {
+					setCurrentPage(0);
+					gsap.fromTo(
+						listRef.current,
+						{ x: "30%", opacity: 0 },
+						{ x: 0, opacity: 1, duration: 0.4 },
+					);
+				} else {
 					setCurrentPage((prev) => prev + 1);
 					gsap.fromTo(
 						listRef.current,
 						{ x: "30%", opacity: 0 },
 						{ x: 0, opacity: 1, duration: 0.4 },
 					);
-				},
-			});
-		}
+				}
+			},
+		});
 	};
 
-	const handlePrev = () => {
-		if (currentPage > 0 && listRef.current) {
-			gsap.to(listRef.current, {
-				x: "30%",
-				opacity: 0,
-				duration: 0.4,
-				onComplete: () => {
+	const handlePrev = (isUser = false) => {
+		if (isUser) setAutoScroll(false);
+		if (!listRef.current) return;
+		gsap.to(listRef.current, {
+			x: "30%",
+			opacity: 0,
+			duration: 0.4,
+			onComplete: () => {
+				if (currentPage === 0) {
+					setCurrentPage(maxPage);
+					gsap.fromTo(
+						listRef.current,
+						{ x: "-30%", opacity: 0 },
+						{ x: 0, opacity: 1, duration: 0.4 },
+					);
+				} else {
 					setCurrentPage((prev) => prev - 1);
 					gsap.fromTo(
 						listRef.current,
 						{ x: "-30%", opacity: 0 },
 						{ x: 0, opacity: 1, duration: 0.4 },
 					);
-				},
-			});
-		}
+				}
+			},
+		});
 	};
+
+	useEffect(() => {
+		if (!autoScroll) return;
+		const timer = setTimeout(() => {
+			handleNext(false);
+		}, 3000);
+		return () => clearTimeout(timer);
+	}, [currentPage, autoScroll]);
 
 	const startIdx = currentPage * ITEMS_PER_PAGE;
 	const visibleServices = services.slice(startIdx, startIdx + ITEMS_PER_PAGE);
@@ -128,7 +155,10 @@ const ServicesPricing = () => {
 			</div>
 			<div className={styles.content}>
 				<div className={styles.buttonArrowContainer}>
-					<ButtonArrow onLeftClick={handlePrev} onRightClick={handleNext} />
+					<ButtonArrow
+						onLeftClick={() => handlePrev(true)}
+						onRightClick={() => handleNext(true)}
+					/>
 				</div>
 				<div className={styles.pricingBox}>
 					<h2 className={styles.title}>

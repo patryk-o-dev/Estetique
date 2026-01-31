@@ -1,7 +1,7 @@
 import styles from "./Testimonials.module.scss";
 import testimonialImg from "../../../assets/images/tesimonials/testimonials.png";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ButtonArrow from "../../utils/ButtonArrow/ButtonArrow";
 
 const testimonialsData = [
@@ -39,10 +39,12 @@ const testimonialsData = [
 
 const Testimonials = () => {
 	const [current, setCurrent] = useState(0);
+	const [autoScroll, setAutoScroll] = useState(true);
 	const textRef = useRef<HTMLParagraphElement>(null);
 	const clientInfoRef = useRef<HTMLDivElement>(null);
 
-	const handleNext = () => {
+	const handleNext = (isUser = false) => {
+		if (isUser) setAutoScroll(false);
 		if (textRef.current) {
 			gsap.fromTo(
 				textRef.current,
@@ -83,7 +85,8 @@ const Testimonials = () => {
 		}
 	};
 
-	const handlePrev = () => {
+	const handlePrev = (isUser = false) => {
+		if (isUser) setAutoScroll(false);
 		if (textRef.current) {
 			gsap.fromTo(
 				textRef.current,
@@ -127,6 +130,14 @@ const Testimonials = () => {
 		}
 	};
 
+	useEffect(() => {
+		if (!autoScroll) return;
+		const timer = setTimeout(() => {
+			handleNext(false);
+		}, 3000);
+		return () => clearTimeout(timer);
+	}, [current, autoScroll]);
+
 	return (
 		<section className={styles.testimonials}>
 			<h2 className={styles.title}>What Our Clients Say</h2>
@@ -139,7 +150,10 @@ const Testimonials = () => {
 							<strong>- {testimonialsData[current].name}</strong>
 							<p>{testimonialsData[current].service}</p>
 						</div>
-						<ButtonArrow onRightClick={handleNext} onLeftClick={handlePrev} />
+						<ButtonArrow
+							onRightClick={() => handleNext(true)}
+							onLeftClick={() => handlePrev(true)}
+						/>
 					</div>
 				</div>
 			</div>
