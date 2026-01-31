@@ -8,36 +8,32 @@ const FooterTop = () => {
 	return (
 		<div className={styles.footerTop}>
 			<div className={styles.leftSection}>
-				<h3>Book your appointment today for a refreshing experience</h3>
+				<h3>Zarezerwuj wizytę i zadbaj o siebie już dziś</h3>
 				<p>
-					A modern beauty salon offering personalized treatments in a relaxing
-					space.
+					Nowoczesny salon kosmetyczny oferujący indywidualnie dopasowane
+					zabiegi w przyjaznej i spokojnej atmosferze.
 				</p>
 			</div>
 			<div className={styles.rightSection}>
 				<div className={styles.infoElement}>
-					<strong className={styles.sectionTitle}>PAGES</strong>
+					<strong className={styles.sectionTitle}>Sekcje</strong>
 					<ul className={styles.pagesList}>
 						<li>
-							<ButtonScrollTo section="Home" text="Home" />
+							<ButtonScrollTo section="Home" text="Esthétique" />
 						</li>
-						{/* Home */}
 						<li>
-							<ButtonScrollTo section="Services" text="Services" />
+							<ButtonScrollTo section="Services" text="Usługi" />
 						</li>
-						{/* Service */}
 						<li>
-							<ButtonScrollTo section="Booking" text="Booking" />
+							<ButtonScrollTo section="Booking" text="Rezerwacja" />
 						</li>
-						{/* Book */}
 						<li>
-							<ButtonScrollTo section="Contact" text="Contact" />
+							<ButtonScrollTo section="Contact" text="Kontakt" />
 						</li>
-						{/* Contact */}
 					</ul>
 				</div>
 				<div className={styles.infoElement}>
-					<strong className={styles.sectionTitle}>Contact</strong>
+					<strong className={styles.sectionTitle}>Kontakt</strong>
 					<ul className={styles.contactList}>
 						<li>
 							<img src={mailIcon} alt="Mail Icon" /> contact@logo.ch

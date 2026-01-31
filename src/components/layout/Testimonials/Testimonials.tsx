@@ -7,21 +7,33 @@ import ButtonArrow from "../../utils/ButtonArrow/ButtonArrow";
 const testimonialsData = [
 	{
 		img: testimonialImg,
-		text: `The atmosphere is calm and beautifully designed.The staff truly listens to your needs and preferences.Every visit feels relaxing and personalized. Highly recommended for anyone seeking quality care. The booking process was quick and easy.`,
-		name: "Alex Johnson",
-		service: "FaceSpa Service",
+		text: `Bardzo miłe miejsce! Pani przecudowna, pełna pasji, uratowała moje paznokcie po małym wypadku.`,
+		name: "Klaudia",
+		service: "Manicure Hybrydowy",
 	},
 	{
 		img: testimonialImg,
-		text: `Absolutely love this place! The team is so professional and friendly. My skin has never looked better. I always look forward to my appointments!`,
+		text: `Byłam już kilka razy i za każdym razem wychodzę bardzo zadowolona. Skóra wygląda świetnie, a dziewczyny zawsze doradzą i wszystko dokładnie tłumaczą.`,
 		name: "Maria Nowak",
-		service: "Skin Therapy",
+		service: "Pielęgnacja twarzy",
 	},
 	{
 		img: testimonialImg,
-		text: `Wonderful experience every time. The treatments are top-notch and the ambiance is so relaxing. Highly recommend!`,
+		text: `Super podejście do klienta i bardzo miła atmosfera. Zabieg wykonany dokładnie i bez pośpiechu. Zdecydowanie polecam.`,
 		name: "John Smith",
-		service: "Massage",
+		service: "Manicure",
+	},
+	{
+		img: testimonialImg,
+		text: `Pierwsza wizyta i na pewno nie ostatnia. Wszystko na wysokim poziomie, od rezerwacji po sam zabieg. Czułam się zaopiekowana.`,
+		name: "Katarzyna Zielińska",
+		service: "Stylizacja brwi",
+	},
+	{
+		img: testimonialImg,
+		text: `Świetne miejsce, czysto, spokojnie i bardzo profesjonalnie. Efekt zabiegu widoczny od razu. Polecam każdemu, kto chce zadbać o siebie.`,
+		name: "Anna Kowalczyk",
+		service: "Makijaż",
 	},
 ];
 

@@ -19,14 +19,16 @@ const SpecialOffers = () => {
 			<div className={styles.content}>
 				<img src={specialOfferImage} alt="Special Offer" />
 				<div className={styles.textContent}>
-					<h2>Special Offers</h2>
+					<h2>Oferty specjalne</h2>
 					<p>
-						20% off your first visit, Free consultation with selected treatments
+						Zarezerwuj swoją pierwszą wizytę online i skorzystaj z 20% zniżki na
+						wszystkie zabiegi.
 					</p>
+
 					<div>
 						<ButtonMain
 							section="Booking"
-							text="Book Appointment"
+							text="Zarezerwuj wizytę"
 							bgc="transparent"
 							action="scroll"
 						/>

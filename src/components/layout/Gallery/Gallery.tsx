@@ -178,7 +178,7 @@ const Gallery = () => {
 	return (
 		<div className={styles.gallery} id="Gallery">
 			<h2 className={styles.title}>
-				Our <span>Gallery</span>
+				Nasza <span>Galeria</span>
 			</h2>
 			<div className={styles.images}>
 				<div className={styles.topEclipseContainer}>

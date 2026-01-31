@@ -8,13 +8,15 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const SERVICES = [
+	"Oczyszczanie twarzy",
+	"Pielęgnacja twarzy",
+	"Mezoterapia",
+	"Anti-aging",
+	"Brwi i rzęsy",
 	"Manicure",
 	"Pedicure",
-	"Facial",
-	"Waxing",
-	"Massage",
-	"Makeup",
-	"Other",
+	"Depilacja",
+	"Makijaż",
 ];
 
 const BookingForm = () => {

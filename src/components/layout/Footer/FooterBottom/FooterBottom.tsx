@@ -9,16 +9,16 @@ const FooterBottom = () => {
 			</div>
 			<div className={styles.footerBottomRight}>
 				<div className={styles.locationSection}>
-					<strong>Location</strong>
+					<strong>Lokalizacja</strong>
 					<div className={styles.mapPlaceholder}>
 						<img src={mapPlaceholder} alt="mapPlaceholder" />
 					</div>
 				</div>
 				<div className={styles.newsletterSection}>
-					<strong>Subscribe to our Newsletter</strong>
+					<strong>Zapisz się do naszego newslettera</strong>
 					<form className={styles.newsletterForm}>
 						<input type="email" />
-						<button>Join Now</button>
+						<button>Dołącz teraz</button>
 					</form>
 				</div>
 			</div>

@@ -10,84 +10,69 @@ import gsap from "gsap";
 const ServicesPricing = () => {
 	const services = [
 		{
-			title: "Face Treatments",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 50.0,
+			title: "Zabieg oczyszczający twarzy",
+			desc: "Manualne lub aparatowe oczyszczanie skóry twarzy.",
+			price: 180.0,
 		},
 		{
-			title: "Facialąśęćżł i Massage",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 90.0,
+			title: "Zabieg nawilżający",
+			desc: "Intensywne nawilżenie i regeneracja skóry.",
+			price: 220.0,
 		},
 		{
-			title: "Hair & Treatment",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 95.0,
+			title: "Peeling kawitacyjny",
+			desc: "Delikatne złuszczanie i odświeżenie cery.",
+			price: 160.0,
 		},
 		{
-			title: "Face Treatments",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 95.0,
+			title: "Mezoterapia bezigłowa",
+			desc: "Wprowadzenie składników aktywnych w głąb skóry.",
+			price: 280.0,
 		},
 		{
-			title: "Manicure & Pedicure",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			title: "Liftingujący zabieg anti-aging",
+			desc: "Poprawa jędrności i napięcia skóry.",
+			price: 320.0,
+		},
+		{
+			title: "Henna brwi i rzęs",
+			desc: "Regulacja brwi oraz koloryzacja henną.",
 			price: 70.0,
 		},
 		{
-			title: "Body Scrub",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 80.0,
-		},
-		{
-			title: "Waxing",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 60.0,
-		},
-		{
-			title: "Makeup",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 120.0,
-		},
-		{
-			title: "Face Treatments",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 50.0,
-		},
-		{
-			title: "Facial & Massage",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			title: "Stylizacja brwi",
+			desc: "Regulacja, geometria i koloryzacja brwi.",
 			price: 90.0,
 		},
 		{
-			title: "Hair & Treatment",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 95.0,
+			title: "Manicure klasyczny",
+			desc: "Opracowanie paznokci i skórek.",
+			price: 100.0,
 		},
 		{
-			title: "Face Treatments",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 95.0,
+			title: "Manicure hybrydowy",
+			desc: "Trwała stylizacja paznokci hybrydą.",
+			price: 160.0,
 		},
 		{
-			title: "Manicure & Pedicure",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 70.0,
+			title: "Pedicure kosmetyczny",
+			desc: "Pielęgnacja stóp i paznokci.",
+			price: 180.0,
 		},
 		{
-			title: "Body Scrub",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 80.0,
-		},
-		{
-			title: "Waxing",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			title: "Depilacja woskiem – twarz",
+			desc: "Precyzyjna depilacja wybranych partii twarzy.",
 			price: 60.0,
 		},
 		{
-			title: "Makeup",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-			price: 120.0,
+			title: "Makijaż dzienny",
+			desc: "Lekki, naturalny makijaż podkreślający urodę.",
+			price: 180.0,
+		},
+		{
+			title: "Makijaż wieczorowy",
+			desc: "Makijaż na specjalne okazje.",
+			price: 250.0,
 		},
 	];
 	const ITEMS_PER_PAGE = 5;
@@ -147,9 +132,13 @@ const ServicesPricing = () => {
 				</div>
 				<div className={styles.pricingBox}>
 					<h2 className={styles.title}>
-						Relax & Rejuvenate <span>Expert Spa Treatments</span>
+						Piękno zaczyna się tutaj <span>Profesjonalna pielęgnacja</span>
 					</h2>
-					<img className={styles.servicesBackground} src={servicesBackground} alt="Background" />
+					<img
+						className={styles.servicesBackground}
+						src={servicesBackground}
+						alt="Background"
+					/>
 					<ul className={styles.pricingList} ref={listRef}>
 						{visibleServices.map((service, index) => (
 							<li key={index} className={styles.serviceItem}>
@@ -166,7 +155,7 @@ const ServicesPricing = () => {
 					</ul>
 					<ButtonMain
 						section="Contact"
-						text="Contact Us"
+						text="Kontakt"
 						bgc="primary"
 						action="scroll"
 					/>

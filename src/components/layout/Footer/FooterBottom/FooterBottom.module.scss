@@ -76,7 +76,7 @@
 	background-color: vars.$background-secondary;
 
 	input {
-		flex: 1;
+		flex: 4;
 		font-size: vars.$font-sm;
 		border: none;
 		background-color: transparent;
@@ -90,12 +90,13 @@
 		padding: vars.$spacing-xs vars.$spacing-lg;
 		background-color: vars.$primary-color;
 		color: vars.$text-light;
-		width: 120px;
+		min-width: 120px;
 		border: none;
 		cursor: pointer;
 		font-size: vars.$font-md;
 		font-weight: 400;
 		line-height: 1.6;
 		letter-spacing: 1px;
+		flex: 1;
 	}
 }
