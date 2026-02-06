@@ -69,4 +69,43 @@
 	}
 }
 
+@media (max-width: vars.$bp-md) {
+	.heroText {
+		.motto {
+			font-size: vars.$font-3xl;
+			margin-bottom: vars.$spacing-md;
+		}
+	}
+}
 
+@media (max-width: vars.$bp-sm) {
+	.transition {
+		display: none;
+	}
+	.heroImageSmall {
+		display: none;
+	}
+
+	.heroText {
+		top: none;
+		bottom: vars.$spacing-3xl;
+		left: vars.$spacing-lg;
+		transform: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		gap: vars.$spacing-xs;
+		min-width: 320px;
+
+		.motto {
+			font-size: vars.$font-2xl;
+			margin-bottom: 0;
+			color: vars.$text-light;
+			font-family: vars.$font-main-heading;
+		}
+	}
+
+	.heroImageFull {
+		width: 100%;
+	}
+}

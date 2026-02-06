@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ButtonMain from "../../utils/ButtonMain/ButtonMain";
 import ButtonScrollTo from "../../utils/ButtonScrollTo/ButtonScrollTo";
 import styles from "./Navbar.module.scss";
@@ -9,8 +9,7 @@ import gsap from "gsap";
 const Navbar = () => {
 	const [extendMenu, setExtendMenu] = useState(false);
 	const [menuVisible, setMenuVisible] = useState(false);
-
-	const mobile = window.innerWidth < 768;
+	const [mobile, setMobile] = useState(window.innerWidth < 768);
 
 	const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -19,6 +18,14 @@ const Navbar = () => {
 	const mobileMenuItem2Ref = useRef<HTMLLIElement>(null);
 	const mobileMenuItem3Ref = useRef<HTMLLIElement>(null);
 	const mobileMenuItem4Ref = useRef<HTMLLIElement>(null);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setMobile(window.innerWidth < 768);
+		};
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	useGSAP(() => {
 		if (!mobile) return;
@@ -78,6 +85,14 @@ const Navbar = () => {
 			});
 		}
 	}, [extendMenu, mobile]);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setExtendMenu(false);
+			setMenuVisible(false);
+		}, 0);
+		return () => clearTimeout(timeout);
+	}, [mobile]);
 
 	return (
 		<>
