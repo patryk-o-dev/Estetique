@@ -140,7 +140,7 @@ const Testimonials = () => {
 
 	return (
 		<section className={styles.testimonials}>
-			<h2 className={styles.title}>What Our Clients Say</h2>
+			<h2 className={styles.title}>Co mówią nasi klienci</h2>
 			<div className={styles.testimonial}>
 				<img src={testimonialsData[current].img} alt="Client testimonial" />
 				<div className={styles.testimonialContent}>

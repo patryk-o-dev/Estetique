@@ -4,7 +4,7 @@ import imgBack from "../../../assets/images/servicesPricing/servicesPricingBack.
 import imgFront from "../../../assets/images/servicesPricing/servicesPricingFront.png";
 import servicesBackground from "../../../assets/images/servicesPricing/servicesBackground.png";
 import styles from "./ServicesPricing.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const ServicesPricing = () => {
@@ -82,7 +82,7 @@ const ServicesPricing = () => {
 
 	const maxPage = Math.ceil(services.length / ITEMS_PER_PAGE) - 1;
 
-	const handleNext = (isUser = false) => {
+	const handleNext = useCallback((isUser = false) => {
 		if (isUser) setAutoScroll(false);
 		if (!listRef.current) return;
 		gsap.to(listRef.current, {
@@ -107,7 +107,7 @@ const ServicesPricing = () => {
 				}
 			},
 		});
-	};
+	}, [currentPage, maxPage]);
 
 	const handlePrev = (isUser = false) => {
 		if (isUser) setAutoScroll(false);
@@ -142,7 +142,7 @@ const ServicesPricing = () => {
 			handleNext(false);
 		}, 3000);
 		return () => clearTimeout(timer);
-	}, [currentPage, autoScroll]);
+	}, [currentPage, autoScroll, handleNext]);
 
 	const startIdx = currentPage * ITEMS_PER_PAGE;
 	const visibleServices = services.slice(startIdx, startIdx + ITEMS_PER_PAGE);
