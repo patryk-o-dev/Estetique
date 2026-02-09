@@ -142,7 +142,7 @@ const Testimonials = () => {
 		<section className={styles.testimonials}>
 			<h2 className={styles.title}>Co mówią nasi klienci</h2>
 			<div className={styles.testimonial}>
-				<img src={testimonialsData[current].img} alt="Client testimonial" />
+				<img src={testimonialsData[current].img} className={styles.testimonialImg} alt="Client testimonial" />
 				<div className={styles.testimonialContent}>
 					<p ref={textRef}>"{testimonialsData[current].text}"</p>
 					<div className={styles.testimonialFooter}>
