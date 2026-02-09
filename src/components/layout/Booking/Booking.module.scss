@@ -2,7 +2,7 @@
 
 .booking {
 	width: 100%;
-  height: 60vh;
+	height: 60vh;
 	min-height: 700px;
 	position: relative;
 }
@@ -52,26 +52,79 @@
 	justify-content: center;
 	gap: vars.$spacing-3xl;
 	padding: vars.$spacing-2xl vars.$spacing-3xl;
-  height: 100%;
+	height: 100%;
 }
 
 .textBox {
 	display: flex;
 	flex-direction: column;
 	gap: vars.$spacing-lg;
-  justify-content: center;
-  width: 50%;
+	justify-content: center;
+	width: 50%;
 
 	h2 {
-    font-size: vars.$font-3xl;
+		font-size: vars.$font-3xl;
 		color: vars.$text-light;
-    line-height: 1.3;
-    font-weight: 500;
+		line-height: 1.3;
+		font-weight: 500;
 	}
 
 	p {
-    font-size: vars.$font-md;
+		font-size: vars.$font-md;
 		color: vars.$text-light;
-    line-height: 1.6;
+		line-height: 1.6;
+	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.booking {
+		width: 100%;
+		height: auto;
+		min-height: auto;
+		position: relative;
+	}
+
+	.content {
+		flex-direction: column;
+		gap: vars.$spacing-lg;
+		padding: vars.$spacing-xl vars.$spacing-xl;
+	}
+
+	.textBox {
+		gap: vars.$spacing-xs;
+		justify-content: center;
+		width: 100%;
+		padding: vars.$spacing-lg 0;
+
+		h2 {
+			font-size: vars.$font-2xl;
+			color: vars.$text-light;
+			line-height: 1.3;
+			font-weight: 500;
+		}
+
+		p {
+			font-size: vars.$font-md;
+			color: vars.$text-light;
+			line-height: 1.6;
+		}
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.content {
+		gap: vars.$spacing-xs;
+	}
+
+	.textBox {
+		padding: vars.$spacing-sm 0;
+
+		h2 {
+			font-size: vars.$font-xl;
+		}
+
+		p {
+			font-size: vars.$font-sm;
+		}
 	}
 }

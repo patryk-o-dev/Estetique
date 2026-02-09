@@ -5,7 +5,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: vars.$spacing-lg;
-	background-color: #fff;
+	background-color: vars.$background-basic;
 	border-radius: vars.$spacing-xs;
 	width: 642px;
 	padding: vars.$spacing-lg;
@@ -31,13 +31,17 @@
 		border-radius: 4px;
 		border: 1px solid vars.$background-basic;
 		padding: vars.$spacing-sm vars.$spacing-md;
+
+		&:not(:placeholder-shown) {
+			color: vars.$text-main;
+		}
 	}
 
 	textarea {
 		width: 100%;
 		height: 95px;
 		background-color: vars.$background-secondary;
-		color: vars.$text-muted;
+		color: vars.$text-main;
 		border-radius: 4px;
 		border: 1px solid vars.$background-basic;
 		resize: none;
@@ -51,6 +55,8 @@
 
 .customSelect {
 	position: relative;
+	font-family: vars.$font-text-light;
+	font-size: vars.$font-sm;
 }
 
 .inputLike {
@@ -152,4 +158,29 @@
 	scale: 0;
 	position: absolute;
 	color: vars.$text-light;
+}
+
+@media (max-width: vars.$bp-md) {
+	.bookingForm {
+		gap: vars.$spacing-lg;
+		width: 100%;
+	}
+
+	.formGroup {
+		textarea {
+			width: 100%;
+			height: 95px;
+		}
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.bookingForm {
+		padding: vars.$spacing-md;
+		min-width: calc(220px + vars.$spacing-md * 2);
+	}
+
+	.formGroup {
+		width: 100%;
+	}
 }

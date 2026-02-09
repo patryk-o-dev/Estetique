@@ -1,5 +1,5 @@
 import BookingForm from "../../features/BookingForm/BookingForm";
-import Transition from "../../utils/Transition/Transition";
+// import Transition from "../../utils/Transition/Transition";
 import styles from "./Booking.module.scss";
 import backgroundImage from "../../../assets/images/booking/sectionBackground.png";
 
@@ -20,7 +20,7 @@ const Booking = () => {
 				</div>
 				<BookingForm />
 			</div>
-			<Transition />
+			{/* <Transition /> */}
 		</section>
 	);
 };
