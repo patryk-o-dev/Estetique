@@ -49,7 +49,7 @@
 }
 
 .title {
-	font-size: vars.$font-3xl;
+	font-size: vars.$font-2xl;
 	span {
 		display: block;
 		color: vars.$primary-color;
@@ -99,7 +99,7 @@
 	width: 100%;
 
 	h3 {
-		font-size: vars.$font-xl;
+		font-size: vars.$font-md;
 		flex: 5;
 	}
 }
@@ -126,6 +126,67 @@
 
 	span {
 		color: vars.$text-main;
+		font-size: vars.$font-md;
+	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.servicesPricing {
+		flex-direction: column-reverse;
+		gap: vars.$spacing-xl;
+		padding: vars.$spacing-xl vars.$spacing-2xl;
+		height: 110vh;
+		min-height: auto;
+	}
+
+	.images {
+		position: relative;
+		width: 100%;
+		flex: 1;
+	}
+
+	.content {
+		width: 100%;
+		height: auto;
+	}
+
+	.pricingList {
+		gap: vars.$spacing-xs;
+		height: auto;
+	}
+
+	.serviceItem {
+		p {
+			font-size: vars.$font-sm;
+		}
+	}
+
+	.serviceHeader {
+		h3 {
+			font-size: vars.$font-md;
+		}
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.servicesPricing {
+		gap: vars.$spacing-md;
+		padding: vars.$spacing-md vars.$spacing-xl;
+	}
+
+	.images {
+		position: relative;
+		width: 100%;
+		flex: 1;
+	}
+
+	.content {
+		width: 100%;
+		height: auto;
+	}
+
+	.title {
 		font-size: vars.$font-lg;
+		padding-top: vars.$spacing-xs;
 	}
 }
