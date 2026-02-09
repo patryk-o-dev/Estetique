@@ -37,14 +37,14 @@
 	justify-content: center;
 	width: 80%;
 	height: 100%;
-  margin: 0 auto;
+	margin: 0 auto;
 	gap: vars.$spacing-2xl;
 	img {
 		height: 75%;
 		z-index: 2;
 		flex: 1;
 		object-fit: cover;
-    width: clamp(200px, 50%, 600px);
+		width: clamp(200px, 50%, 600px);
 	}
 }
 
@@ -61,6 +61,35 @@
 	p {
 		font-size: vars.$font-lg;
 		color: vars.$text-light;
-    letter-spacing: 1px;
+		letter-spacing: 1px;
+	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.specialOffers {
+		height: auto;
+	}
+
+	.content {
+		flex-direction: column-reverse;
+		width: 100%;
+		height: auto;
+		padding: vars.$spacing-2xl vars.$spacing-xl;
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.textContent {
+		flex: 2;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		gap: vars.$spacing-xs;
+		h2 {
+			font-size: vars.$font-xl;
+		}
+		p {
+			font-size: vars.$font-md;
+		}
 	}
 }
