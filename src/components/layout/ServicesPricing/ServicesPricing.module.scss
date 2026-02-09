@@ -78,7 +78,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: vars.$spacing-md;
-	height: 404px;
 }
 
 .serviceItem {
@@ -152,7 +151,6 @@
 
 	.pricingList {
 		gap: vars.$spacing-xs;
-		height: auto;
 	}
 
 	.serviceItem {

@@ -4,7 +4,13 @@ import imgBack from "../../../assets/images/servicesPricing/servicesPricingBack.
 import imgFront from "../../../assets/images/servicesPricing/servicesPricingFront.png";
 import servicesBackground from "../../../assets/images/servicesPricing/servicesBackground.png";
 import styles from "./ServicesPricing.module.scss";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+	useLayoutEffect,
+} from "react";
 import gsap from "gsap";
 
 const ServicesPricing = () => {
@@ -75,39 +81,53 @@ const ServicesPricing = () => {
 			price: 250.0,
 		},
 	];
-	const ITEMS_PER_PAGE = 5;
+	const DEFAULT_LIST_HEIGHT = 404;
+	const [itemsPerPage, setItemsPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(0);
 	const [autoScroll, setAutoScroll] = useState(true);
 	const listRef = useRef<HTMLUListElement>(null);
+	const itemRef = useRef<HTMLLIElement>(null);
 
-	const maxPage = Math.ceil(services.length / ITEMS_PER_PAGE) - 1;
+	const maxPage = Math.ceil(services.length / itemsPerPage) - 1;
 
-	const handleNext = useCallback((isUser = false) => {
-		if (isUser) setAutoScroll(false);
-		if (!listRef.current) return;
-		gsap.to(listRef.current, {
-			x: "-30%",
-			opacity: 0,
-			duration: 0.4,
-			onComplete: () => {
-				if (currentPage === maxPage) {
-					setCurrentPage(0);
-					gsap.fromTo(
-						listRef.current,
-						{ x: "30%", opacity: 0 },
-						{ x: 0, opacity: 1, duration: 0.4 },
-					);
-				} else {
-					setCurrentPage((prev) => prev + 1);
-					gsap.fromTo(
-						listRef.current,
-						{ x: "30%", opacity: 0 },
-						{ x: 0, opacity: 1, duration: 0.4 },
-					);
-				}
-			},
-		});
-	}, [currentPage, maxPage]);
+	useLayoutEffect(() => {
+		if (listRef.current && itemRef.current) {
+			const listHeight = listRef.current.clientHeight || DEFAULT_LIST_HEIGHT;
+			const itemHeight = itemRef.current.clientHeight || 1;
+			const fit = Math.max(1, Math.floor(listHeight / itemHeight));
+			setItemsPerPage(fit);
+		}
+	}, []);
+
+	const handleNext = useCallback(
+		(isUser = false) => {
+			if (isUser) setAutoScroll(false);
+			if (!listRef.current) return;
+			gsap.to(listRef.current, {
+				x: "-30%",
+				opacity: 0,
+				duration: 0.4,
+				onComplete: () => {
+					if (currentPage === maxPage) {
+						setCurrentPage(0);
+						gsap.fromTo(
+							listRef.current,
+							{ x: "30%", opacity: 0 },
+							{ x: 0, opacity: 1, duration: 0.4 },
+						);
+					} else {
+						setCurrentPage((prev) => prev + 1);
+						gsap.fromTo(
+							listRef.current,
+							{ x: "30%", opacity: 0 },
+							{ x: 0, opacity: 1, duration: 0.4 },
+						);
+					}
+				},
+			});
+		},
+		[currentPage, maxPage],
+	);
 
 	const handlePrev = (isUser = false) => {
 		if (isUser) setAutoScroll(false);
@@ -144,8 +164,8 @@ const ServicesPricing = () => {
 		return () => clearTimeout(timer);
 	}, [currentPage, autoScroll, handleNext]);
 
-	const startIdx = currentPage * ITEMS_PER_PAGE;
-	const visibleServices = services.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+	const startIdx = currentPage * itemsPerPage;
+	const visibleServices = services.slice(startIdx, startIdx + itemsPerPage);
 
 	return (
 		<section className={styles.servicesPricing} id="Services">
@@ -169,9 +189,17 @@ const ServicesPricing = () => {
 						src={servicesBackground}
 						alt="Background"
 					/>
-					<ul className={styles.pricingList} ref={listRef}>
+					<ul
+						className={styles.pricingList}
+						ref={listRef}
+						style={{ height: DEFAULT_LIST_HEIGHT }}
+					>
 						{visibleServices.map((service, index) => (
-							<li key={index} className={styles.serviceItem}>
+							<li
+								key={index}
+								className={styles.serviceItem}
+								ref={index === 0 ? itemRef : undefined}
+							>
 								<div className={styles.serviceHeader}>
 									<h3>{service.title}</h3>
 									<div className={styles.price}>

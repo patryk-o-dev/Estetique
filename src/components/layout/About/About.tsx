@@ -30,7 +30,6 @@ const About = () => {
 				start: "top 75%",
 				end: "top 5%",
 				scrub: 3,
-				markers: true,
 			},
 		});
 
