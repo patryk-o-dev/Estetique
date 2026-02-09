@@ -28,8 +28,9 @@ const About = () => {
 			scrollTrigger: {
 				trigger: imgLeftTopRef.current,
 				start: "top 75%",
-				end: "top top",
+				end: "top 5%",
 				scrub: 3,
+				markers: true,
 			},
 		});
 
