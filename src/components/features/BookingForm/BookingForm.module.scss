@@ -160,6 +160,37 @@
 	color: vars.$text-light;
 }
 
+// Overlay for success message
+.formWrapper {
+	position: relative;
+}
+
+.successOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: vars.$background-basic;
+	padding: vars.$spacing-lg;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	pointer-events: all;
+}
+
+.successTitle {
+	color: vars.$primary-color;
+	margin-bottom: vars.$spacing-md;
+}
+
+.successText {
+	color: vars.$text-main;
+	font-size: vars.$font-md;
+}
+
 @media (max-width: vars.$bp-md) {
 	.bookingForm {
 		gap: vars.$spacing-lg;

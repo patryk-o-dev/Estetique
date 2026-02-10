@@ -36,14 +36,14 @@ const FooterTop = () => {
 					<strong className={styles.sectionTitle}>Kontakt</strong>
 					<ul className={styles.contactList}>
 						<li>
-							<img src={mailIcon} alt="Mail Icon" /> contact@logo.ch
+							<img src={mailIcon} alt="Mail Icon" /> joannaolszewska20@gmail.com
 						</li>
 						<li>
-							<img src={phoneIcon} alt="Phone Icon" /> 123456789
+							<img src={phoneIcon} alt="Phone Icon" /> 693 298 514
 						</li>
 						<li>
-							<img src={locationIcon} alt="Location Icon" /> Marszałkowska
-							21/37, Warszawa
+							<img src={locationIcon} alt="Location Icon" /> plac Jana Pawła II
+							16, Ciechanów
 						</li>
 					</ul>
 				</div>

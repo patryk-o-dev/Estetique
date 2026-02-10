@@ -26,9 +26,8 @@
 
 .locationSection {
 	display: flex;
-	gap: vars.$spacing-2xl;
+	gap: vars.$spacing-lg;
 	width: 100%;
-	justify-content: space-between;
 
 	strong {
 		font-size: vars.$font-lg;
@@ -40,11 +39,12 @@
 		display: flex;
 		justify-content: flex-end;
 		align-self: flex-end;
+		width: 100%;
 
-		img {
-			height: 100%;
-			max-height: 200px;
-			aspect-ratio: 2 / 1;
+		.abc {
+			border: none;
+			width: 100%;
+			max-width: 500px;
 			border-radius: 10px;
 		}
 	}
@@ -69,6 +69,7 @@
 
 .newsletterForm {
 	display: flex;
+	justify-content: space-between;
 	gap: vars.$spacing-sm;
 	width: 100%;
 	border: 1px solid vars.$secondary-color;
@@ -76,7 +77,7 @@
 	background-color: vars.$background-secondary;
 
 	input {
-		flex: 4;
+		flex: 1;
 		font-size: vars.$font-sm;
 		border: none;
 		background-color: transparent;
@@ -90,15 +91,25 @@
 		padding: vars.$spacing-xs vars.$spacing-lg;
 		background-color: vars.$primary-color;
 		color: vars.$text-light;
-		min-width: 150px;
 		border: none;
 		cursor: pointer;
 		font-size: vars.$font-md;
 		font-weight: 400;
 		line-height: 1.6;
 		letter-spacing: 1px;
-		flex: 1;
 	}
+}
+
+.mailIcon {
+	width: 20px;
+	height: 20px;
+	filter: brightness(0) saturate(100%) invert(93%) sepia(81%) saturate(1673%)
+		hue-rotate(179deg) brightness(114%) contrast(96%);
+}
+
+.thankYou {
+	font-size: vars.$font-sm;
+	color: vars.$text-main;
 }
 
 @media (max-width: vars.$bp-md) {
@@ -117,4 +128,35 @@
 }
 
 @media (max-width: vars.$bp-sm) {
+	.locationSection {
+		flex-direction: column;
+
+		.mapPlaceholder {
+			display: flex;
+			justify-content: center;
+
+			.abc {
+				max-width: 100%;
+			}
+		}
+	}
+
+	.newsletterForm {
+		gap: vars.$spacing-xs;
+		padding: vars.$spacing-xs vars.$spacing-xs vars.$spacing-xs vars.$spacing-md;
+
+		button {
+			padding: vars.$spacing-xs vars.$spacing-sm;
+			background-color: vars.$primary-color;
+			color: vars.$text-light;
+			border: none;
+		}
+	}
+
+	.mailIcon {
+		width: 20px;
+		height: 20px;
+		filter: brightness(0) saturate(100%) invert(93%) sepia(81%) saturate(1673%)
+			hue-rotate(179deg) brightness(114%) contrast(96%);
+	}
 }

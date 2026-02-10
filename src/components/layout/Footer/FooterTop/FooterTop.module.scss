@@ -9,8 +9,7 @@
 .leftSection {
 	display: flex;
 	flex-direction: column;
-	gap: vars.$spacing-sm;
-	width: 35%;
+	width: 40%;
 
 	h3 {
 		font-size: vars.$font-3xl;
@@ -31,14 +30,14 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	width: 50%;
+	width: 55%;
+	gap: vars.$spacing-lg;
 }
 
 .infoElement {
 	display: flex;
 	flex-direction: column;
 	gap: vars.$spacing-lg;
-	max-width: 300px;
 }
 
 .sectionTitle {
@@ -149,5 +148,19 @@
 	.sectionTitle {
 		margin-bottom: 0;
 		color: vars.$text-main;
+	}
+	.pagesList {
+		gap: vars.$spacing-xs;
+
+		button {
+			font-size: vars.$font-sm;
+			letter-spacing: 1px;
+			line-height: 1.6;
+		}
+
+		button:hover {
+			color: vars.$alert-color;
+			cursor: pointer;
+		}
 	}
 }
