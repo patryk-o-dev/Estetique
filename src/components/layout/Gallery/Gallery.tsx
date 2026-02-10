@@ -152,6 +152,10 @@ const Gallery = () => {
 		galleryimg2,
 		galleryimg3,
 		galleryimg4,
+		galleryimg1,
+		galleryimg2,
+		galleryimg3,
+		galleryimg4,
 	];
 	const imagesContainerRef = useRef<HTMLDivElement | null>(null);
 

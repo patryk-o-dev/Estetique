@@ -90,7 +90,7 @@
 		padding: vars.$spacing-xs vars.$spacing-lg;
 		background-color: vars.$primary-color;
 		color: vars.$text-light;
-		min-width: 120px;
+		min-width: 150px;
 		border: none;
 		cursor: pointer;
 		font-size: vars.$font-md;
@@ -99,4 +99,22 @@
 		letter-spacing: 1px;
 		flex: 1;
 	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.footerBottom {
+		flex-direction: column;
+		gap: vars.$spacing-xl;
+		align-items: flex-start;
+	}
+
+	.footerBottomRight {
+		text-align: left;
+		align-items: flex-start;
+		justify-content: space-around;
+		width: 100%;
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
 }

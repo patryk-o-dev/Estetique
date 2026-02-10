@@ -19,3 +19,22 @@
 	filter: brightness(0) saturate(100%) invert(60%) sepia(6%) saturate(1197%)
 		hue-rotate(90deg) brightness(88%) contrast(86%);
 }
+
+@media (max-width: vars.$bp-md) {
+	.footer {
+		padding: vars.$spacing-2xl vars.$spacing-xl;
+		gap: vars.$spacing-xl;
+	}
+	.footerBgcVector {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: auto;
+		width: 100%;
+		z-index: -1;
+		opacity: 0.4;
+		filter: brightness(0) saturate(100%) invert(60%) sepia(6%) saturate(1197%)
+			hue-rotate(90deg) brightness(88%) contrast(86%);
+	}
+}

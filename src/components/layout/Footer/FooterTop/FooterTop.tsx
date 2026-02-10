@@ -51,16 +51,14 @@ const FooterTop = () => {
 					<strong className={styles.sectionTitle}>Social</strong>
 					<ul className={styles.socialList}>
 						<li>
-							<a href="#">Instagram</a>
+							<a href="https://www.facebook.com/profile.php?id=100063622178569">
+								Facebook
+							</a>
 						</li>
 						<li>
-							<a href="#">Twitter</a>
-						</li>
-						<li>
-							<a href="#">Facebook</a>
-						</li>
-						<li>
-							<a href="#">LinkedIn</a>
+							<a href="https://www.rezobo.com/salon/gabinet-kosmetyczny-esthetique/oferta">
+								Wpadaj.pl
+							</a>
 						</li>
 					</ul>
 				</div>

@@ -38,6 +38,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: vars.$spacing-lg;
+	max-width: 300px;
 }
 
 .sectionTitle {
@@ -103,5 +104,50 @@
 		&:hover {
 			color: vars.$alert-color;
 		}
+	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.footerTop {
+		flex-direction: column;
+		gap: vars.$spacing-2xl;
+	}
+
+	.leftSection {
+		flex-direction: column;
+		gap: vars.$spacing-lg;
+		width: 100%;
+
+		h3 {
+			font-size: vars.$font-2xl;
+		}
+
+		p {
+			font-size: vars.$font-md;
+		}
+	}
+
+	.rightSection {
+		width: 100%;
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.rightSection {
+		flex-wrap: wrap;
+
+		:nth-child(3) {
+			width: 100%;
+		}
+	}
+
+	.infoElement {
+		gap: vars.$spacing-xs;
+		margin-bottom: vars.$spacing-md;
+	}
+
+	.sectionTitle {
+		margin-bottom: 0;
+		color: vars.$text-main;
 	}
 }
