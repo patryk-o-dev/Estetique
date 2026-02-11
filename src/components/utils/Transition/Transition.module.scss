@@ -2,12 +2,28 @@
 
 .transition {
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 	left: 0;
 	width: 100%;
-  z-index: 2;
-  img {
-    width: 100%;
-    height: 100px;
-  }
+	z-index: 2;
+	img {
+		width: 100%;
+		height: 100px;
+	}
+}
+
+@media (max-width: vars.$bp-md) {
+	.transition {
+		img {
+			height: 50px;
+		}
+	}
+}
+
+@media (max-width: vars.$bp-sm) {
+	.transition {
+		img {
+			height: 25px;
+		}
+	}
 }

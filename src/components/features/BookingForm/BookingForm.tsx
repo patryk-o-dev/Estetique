@@ -26,6 +26,7 @@ const BookingForm = () => {
 		null,
 	);
 	const [showSuccess, setShowSuccess] = useState(false);
+	const [error, setError] = useState(false);
 
 	gsap.registerPlugin(useGSAP);
 	const selectRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,7 @@ const BookingForm = () => {
 	const smsIconRef = useRef<HTMLImageElement>(null);
 	const callIconRef = useRef<HTMLImageElement>(null);
 	const overlayRef = useRef<HTMLDivElement>(null);
+	const errorPopupRef = useRef<HTMLDivElement>(null);
 
 	const [state, handleSubmit] = useForm("mdkwbwvl");
 
@@ -135,8 +137,49 @@ const BookingForm = () => {
 		return () => document.removeEventListener("mousedown", handleClick);
 	}, [open]);
 
+	const handleError = () => {
+		setError(true);
+		setTimeout(() => setError(false), 8000);
+	};
+
+	useGSAP(() => {
+		if (error && errorPopupRef.current) {
+			gsap.fromTo(
+				errorPopupRef.current,
+				{ opacity: 0, top: "60px", right: "-400px" },
+				{
+					opacity: 1,
+					top: "60px",
+					right: "60px",
+					ease: "power2.out",
+					duration: 1,
+				},
+			);
+			gsap.fromTo(
+				errorPopupRef.current,
+				{
+					opacity: 1,
+					top: "60px",
+					right: "60px",
+				},
+				{
+					opacity: 0,
+					top: "60px",
+					ease: "power2.out",
+					duration: 1,
+					delay: 4,
+				},
+			);
+		}
+	}, [error]);
+
 	return (
 		<div className={styles.formWrapper}>
+			<div className={styles.errorPopup} ref={errorPopupRef}>
+				{error && (
+					<p className={styles.errorMessage}>Formularz zawiera błędy</p>
+				)}
+			</div>
 			<form
 				className={styles.bookingForm}
 				onSubmit={handleSubmit}
@@ -148,17 +191,31 @@ const BookingForm = () => {
 						type="text"
 						name="name"
 						placeholder="Wpisz swoje imię/nazwisko"
+						required
 					/>
 					<ValidationError prefix="Name" field="name" errors={state.errors} />
 				</div>
 				<div className={styles.formGroup}>
 					<label>Numer telefonu</label>
-					<input type="text" name="phone" placeholder="Wpisz swój numer" />
+					<input
+						type="text"
+						name="phone"
+						placeholder="Wpisz swój numer"
+						required
+						onInvalid={handleError}
+						pattern="[0-9 ]+"
+					/>
 					<ValidationError prefix="Phone" field="phone" errors={state.errors} />
 				</div>
 				<div className={styles.formGroup}>
 					<label>Preferowany czas</label>
-					<input type="date" name="time" placeholder="Wybierz czas" />
+					<input
+						type="date"
+						name="time"
+						placeholder="Wybierz czas"
+						required
+						min={new Date().toISOString().split("T")[0]}
+					/>
 					<ValidationError prefix="Time" field="time" errors={state.errors} />
 				</div>
 				<div className={styles.formGroup}>
@@ -171,6 +228,7 @@ const BookingForm = () => {
 							readOnly
 							className={styles.inputLike}
 							placeholder="Wybierz usługę"
+							required
 							onClick={() => setOpen((v) => !v)}
 						/>
 						<button

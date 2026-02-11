@@ -51,13 +51,19 @@ const FooterTop = () => {
 					<strong className={styles.sectionTitle}>Social</strong>
 					<ul className={styles.socialList}>
 						<li>
-							<a href="https://www.facebook.com/profile.php?id=100063622178569">
+							<a
+								href="https://www.facebook.com/profile.php?id=100063622178569"
+								target="_blank"
+							>
 								Facebook
 							</a>
 						</li>
 						<li>
-							<a href="https://www.rezobo.com/salon/gabinet-kosmetyczny-esthetique/oferta">
-								Wpadaj.pl
+							<a
+								href="https://www.rezobo.com/salon/gabinet-kosmetyczny-esthetique/oferta"
+								target="_blank"
+							>
+								Rezobo.com
 							</a>
 						</li>
 					</ul>

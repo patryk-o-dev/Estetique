@@ -56,6 +56,8 @@
 	align-items: center;
 
 	img {
+		filter: brightness(0) saturate(100%) invert(54%) sepia(9%) saturate(717%)
+			hue-rotate(90deg) brightness(96%) contrast(92%);
 		width: 16px;
 		height: 8px;
 		rotate: -42deg;
@@ -64,5 +66,10 @@
 
 .transparent {
 	background-color: transparent;
+	border: 1px solid vars.$text-muted;
+}
+
+.secondary {
+	background-color: vars.$text-secondary;
 	border: 1px solid vars.$text-muted;
 }

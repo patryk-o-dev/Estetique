@@ -27,7 +27,6 @@ const Hero = () => {
 				<img src={imgFull} alt="Full hero" />
 			</div>
 			<div className={styles.transition}>
-				{/* In future adjust transition for thiner devices */}
 				<Transition />
 			</div>
 		</section>

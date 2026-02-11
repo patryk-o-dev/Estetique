@@ -5,6 +5,7 @@
 	width: 100%;
 	background-color: vars.$secondary-color;
 	position: relative;
+	overflow: hidden;
 	&::after {
 		content: "";
 		position: absolute;
@@ -79,9 +80,6 @@
 }
 
 @media (max-width: vars.$bp-sm) {
-	.transition {
-		display: none;
-	}
 	.heroImageSmall {
 		display: none;
 	}

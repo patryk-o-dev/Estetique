@@ -16,20 +16,26 @@
 		cursor: pointer;
 		height: 100%;
 
-    img {
-      width: 15px;
-      height: 15px;
-    }
+		img {
+			width: 15px;
+			height: 15px;
+		}
 	}
 }
 
 .leftButton {
 	rotate: 180deg;
+	img {
+		filter: brightness(0) saturate(100%) invert(81%) sepia(1%) saturate(3865%)
+			hue-rotate(207deg) brightness(121%) contrast(96%);
+	}
 }
 
 .rightButton {
 	background-color: transparent;
 	border: 1px solid vars.$text-muted;
-	filter: brightness(0) saturate(100%) invert(73%) sepia(7%) saturate(157%)
-		hue-rotate(201deg) brightness(89%) contrast(91%);
+	img {
+		filter: brightness(0) saturate(100%) invert(73%) sepia(7%) saturate(157%)
+			hue-rotate(201deg) brightness(89%) contrast(91%);
+	}
 }

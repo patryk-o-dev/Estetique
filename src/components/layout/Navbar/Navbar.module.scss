@@ -11,6 +11,7 @@
 	align-items: center;
 	border: vars.$text-light 1px solid;
 	z-index: 99;
+	overflow: hidden;
 }
 
 .navbarContent {
@@ -64,6 +65,10 @@
 // MOBILE MENU
 
 .hamburger {
+	position: absolute;
+	top: 50%;
+	right: vars.$spacing-sm;
+	transform: translateY(-50%);
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
@@ -71,6 +76,25 @@
 	height: 24px;
 
 	.hamburgerIcon {
+		width: 22px;
+		height: 80%;
+		filter: brightness(0) saturate(100%) invert(96%) sepia(10%) saturate(109%)
+			hue-rotate(161deg) brightness(101%) contrast(96%);
+	}
+}
+
+.hamburgerClose {
+	position: absolute;
+	top: 50%;
+	right: -(vars.$spacing-xl);
+	transform: translateY(-50%);
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+
+	.hamburgerCloseIcon {
 		width: 22px;
 		height: 80%;
 		filter: brightness(0) saturate(100%) invert(96%) sepia(10%) saturate(109%)

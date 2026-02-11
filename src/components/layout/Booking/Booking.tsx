@@ -1,7 +1,8 @@
 import BookingForm from "../../features/BookingForm/BookingForm";
-// import Transition from "../../utils/Transition/Transition";
+import Transition from "../../utils/Transition/Transition";
 import styles from "./Booking.module.scss";
 import backgroundImage from "../../../assets/images/booking/sectionBackground.png";
+import ButtonMain from "../../utils/ButtonMain/ButtonMain";
 
 const Booking = () => {
 	return (
@@ -14,13 +15,23 @@ const Booking = () => {
 				<div className={styles.textBox}>
 					<h2>Umów się na wizytę w kilka minut</h2>
 					<p>
-						Wybierz datę i godzinę która ci odpowiada. Potwierdzimy dostępność
-						drogą mailową lub telefoniczną.
+						Skorzystaj z formularza kontaktowego, a odezwiemy się do Ciebie i
+						wspólnie dobierzemy termin, który będzie dla Ciebie najwygodniejszy.
 					</p>
+					<p>Wolisz rezerwować samodzielnie?</p>
+					<div className={styles.buttonContainer}>
+						<ButtonMain
+							text="Kalendarz Online"
+							bgc="secondary"
+							action="rezobo"
+						/>
+					</div>
 				</div>
-				<BookingForm />
+				<div className={styles.formBox}>
+					<BookingForm />
+				</div>
 			</div>
-			{/* <Transition /> */}
+			<Transition />
 		</section>
 	);
 };

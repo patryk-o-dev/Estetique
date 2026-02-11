@@ -71,7 +71,10 @@ p {
 	font-family: vars.$font-text-main;
 }
 
-label, input, textarea, select {
+label,
+input,
+textarea,
+select {
 	font-family: vars.$font-text-light;
 }
 
@@ -82,10 +85,18 @@ button {
 	font-family: vars.$font-text-main;
 }
 
+button:focus {
+	outline: none;
+}
+
+button {
+	-webkit-tap-highlight-color: transparent;
+}
+
 input[type="radio"] {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
 }
 
 // PAGE WRAPPER

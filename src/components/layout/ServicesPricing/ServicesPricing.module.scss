@@ -78,6 +78,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: vars.$spacing-md;
+	height: 350px;
+	justify-content: center;
 }
 
 .serviceItem {
@@ -88,6 +90,9 @@
 	p {
 		font-size: vars.$font-md;
 		color: vars.$text-accent;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
@@ -100,6 +105,9 @@
 	h3 {
 		font-size: vars.$font-md;
 		flex: 5;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
@@ -170,6 +178,20 @@
 	.servicesPricing {
 		gap: vars.$spacing-md;
 		padding: vars.$spacing-md vars.$spacing-xl;
+	}
+
+	.serviceHeader {
+		h3 {
+			flex: 6;
+		}
+	}
+
+	.price {
+		justify-content: flex-end;
+		flex: 2;
+		.separator {
+			width: 60%;
+		}
 	}
 
 	.images {

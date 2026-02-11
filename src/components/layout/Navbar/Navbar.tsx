@@ -3,6 +3,7 @@ import ButtonMain from "../../utils/ButtonMain/ButtonMain";
 import ButtonScrollTo from "../../utils/ButtonScrollTo/ButtonScrollTo";
 import styles from "./Navbar.module.scss";
 import imgMenu from "../../../assets/icons/menu.png";
+import closeIcon from "../../../assets/icons/close.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -12,6 +13,7 @@ const Navbar = () => {
 	const [mobile, setMobile] = useState(window.innerWidth < 768);
 
 	const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
+	const closeButtonRef = useRef<HTMLButtonElement>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 	const logoRef = useRef<HTMLSpanElement>(null);
 	const mobileMenuItem1Ref = useRef<HTMLLIElement>(null);
@@ -37,54 +39,82 @@ const Navbar = () => {
 			mobileMenuItem4Ref.current,
 		];
 
-		if (extendMenu && menu) {
+		if (extendMenu && menu && !menuVisible) {
 			setMenuVisible(true);
 			gsap.to(logoRef.current, {
 				marginLeft: "50%",
 				transform: "translateX(-50%)",
 				textAlign: "center",
-				duration: 1,
+				duration: 1.2,
 			});
 			gsap.to(menu, {
 				opacity: 1,
 				pointerEvents: "auto",
-				duration: 0.35,
+				duration: 0.5,
 				ease: "power2.out",
 			});
 			gsap.fromTo(
 				items,
 				{ x: -30, opacity: 0 },
 				{
-					x: 0,
+					right: "16px",
 					opacity: 1,
-					duration: 0.4,
-					stagger: 0.08,
+					duration: 0.6,
+					stagger: 0.12,
 					ease: "power2.out",
-					delay: 0.15,
+					delay: 0.2,
 				},
 			);
-		} else if (!extendMenu && menu) {
+			gsap.to(hamburgerButtonRef.current, {
+				disabled: true,
+				right: `-40px`,
+				duration: 1,
+				ease: "elastic.in(1,0.5)",
+			});
+			gsap
+				.to(closeButtonRef.current, {
+					disabled: false,
+					right: "16px",
+					ease: "elastic.out(1,0.5)",
+					duration: 1.5,
+				})
+				.delay(1.5);
+		} else if (!extendMenu && menu && menuVisible) {
 			gsap.to(menu, {
 				opacity: 0,
-				duration: 0.3,
-				ease: "power2.in",
+				duration: 0.4,
+				ease: "power4.in",
 				onComplete: () => setMenuVisible(false),
 			});
 			gsap.to(items, {
 				x: -30,
 				opacity: 0,
-				duration: 0.2,
-				stagger: 0.05,
-				ease: "power2.in",
+				duration: 0.3,
+				stagger: 0.08,
+				ease: "power4.in",
 			});
 			gsap.to(logoRef.current, {
 				marginLeft: "0%",
 				transform: "",
 				textAlign: "",
-				duration: 1,
+				duration: 1.2,
 			});
+			gsap.to(closeButtonRef.current, {
+				disabled: true,
+				right: "-40px",
+				duration: 1,
+				ease: "elastic.in(1,0.5)",
+			});
+			gsap
+				.to(hamburgerButtonRef.current, {
+					disabled: false,
+					right: "16px",
+					duration: 1.5,
+					ease: "elastic.out(1,0.5)",
+				})
+				.delay(1.5);
 		}
-	}, [extendMenu, mobile]);
+	}, [extendMenu, mobile, menuVisible]);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -102,13 +132,30 @@ const Navbar = () => {
 						Esthétique
 					</span>
 					{mobile && (
-						<button
-							className={styles.hamburger}
-							onClick={() => setExtendMenu((v) => !v)}
-							ref={hamburgerButtonRef}
-						>
-							<img src={imgMenu} alt="Menu" className={styles.hamburgerIcon} />
-						</button>
+						<>
+							<button
+								className={styles.hamburger}
+								onClick={() => setExtendMenu((v) => !v)}
+								ref={hamburgerButtonRef}
+							>
+								<img
+									src={imgMenu}
+									alt="Menu"
+									className={styles.hamburgerIcon}
+								/>
+							</button>
+							<button
+								className={styles.hamburgerClose}
+								onClick={() => setExtendMenu((v) => !v)}
+								ref={closeButtonRef}
+							>
+								<img
+									src={closeIcon}
+									alt="Close Menu"
+									className={styles.hamburgerCloseIcon}
+								/>
+							</button>
+						</>
 					)}
 					{!mobile && (
 						<div className={styles.navItems}>

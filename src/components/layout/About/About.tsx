@@ -22,51 +22,47 @@ const About = () => {
 	const textRef = useRef<HTMLDivElement>(null);
 	const aboutDecorRef = useRef<HTMLImageElement>(null);
 	const buttonRef = useRef<HTMLDivElement>(null);
+	const sectionRef = useRef<HTMLElement>(null);
 
 	useGSAP(() => {
-		const tl = gsap.timeline({
+		const tl1 = gsap.timeline({
 			scrollTrigger: {
-				trigger: imgLeftTopRef.current,
-				start: "top 75%",
-				end: "top 5%",
+				trigger: sectionRef.current,
+				start: "20% 100%",
+				end: "40% 50%",
 				scrub: 3,
 			},
 		});
 
-		tl.from(imgLeftTopRef.current, {
-			x: -500,
+		const tl2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: sectionRef.current,
+				start: "25% 50%",
+				end: "center 55%",
+				scrub: 3,
+			},
+		});
+
+		tl1.from(imgLeftTopRef.current, {
+			x: -200,
 			height: 0,
 			opacity: 0,
 			rotate: -45,
 			filter: "blur(20px)",
+			ease: "power4.out",
 		});
 
-		tl.from(imgRightTopRef.current, {
-			x: 500,
-			y: 500,
+		tl1.from(imgRightTopRef.current, {
+			x: 200,
+			y: 200,
 			opacity: 0,
 			scale: 0,
 			rotate: 45,
 			filter: "blur(20px)",
+			ease: "power4.out",
 		});
 
-		tl.from(imgLeftBottomRef.current, {
-			x: -500,
-			y: -100,
-			opacity: 0,
-			rotate: -30,
-			filter: "blur(20px)",
-		});
-
-		tl.from(imgRightBottomRef.current, {
-			x: 500,
-			opacity: 0,
-			rotate: 30,
-			y: 200,
-			filter: "blur(20px)",
-		});
-
-		tl.from(textRef.current, {
+		tl2.from(textRef.current, {
 			opacity: 0,
 			scale: 0.2,
 			filter: "blur(20px)",
@@ -81,10 +77,26 @@ const About = () => {
 				ease: "power1.inOut",
 			});
 		}
+
+		tl2.from(imgLeftBottomRef.current, {
+			x: -500,
+			y: -100,
+			opacity: 0,
+			rotate: -30,
+			filter: "blur(20px)",
+		});
+
+		tl2.from(imgRightBottomRef.current, {
+			x: 500,
+			opacity: 0,
+			rotate: 30,
+			y: 200,
+			filter: "blur(20px)",
+		});
 	}, []);
 
 	return (
-		<section className={styles.about} id="About">
+		<section className={styles.about} id="About" ref={sectionRef}>
 			<div className={styles.content}>
 				<img
 					ref={imgLeftTopRef}
@@ -126,7 +138,7 @@ const About = () => {
 						piękno w spokojnej i przyjaznej atmosferze.
 					</p>
 					<div ref={buttonRef}>
-						<ButtonMain text="Więcej o nas" bgc="primary" action="link" />
+						<ButtonMain text="Więcej o nas" bgc="primary" action="fb" />
 					</div>
 				</div>
 			</div>

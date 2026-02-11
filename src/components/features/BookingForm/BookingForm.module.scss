@@ -7,7 +7,6 @@
 	gap: vars.$spacing-lg;
 	background-color: vars.$background-basic;
 	border-radius: vars.$spacing-xs;
-	width: 642px;
 	padding: vars.$spacing-lg;
 }
 
@@ -189,6 +188,21 @@
 .successText {
 	color: vars.$text-main;
 	font-size: vars.$font-md;
+}
+
+.errorPopup {
+	position: fixed;
+	background-color: vars.$alert-color;
+	color: vars.$text-light;
+	padding: vars.$spacing-md vars.$spacing-lg;
+	border-radius: 8px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.errorMessage {
+	font-size: vars.$font-md;
+	font-weight: bold;
+	letter-spacing: 0.5px;
 }
 
 @media (max-width: vars.$bp-md) {

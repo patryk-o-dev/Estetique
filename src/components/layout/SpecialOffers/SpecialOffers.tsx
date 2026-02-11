@@ -21,8 +21,8 @@ const SpecialOffers = () => {
 				<div className={styles.textContent}>
 					<h2>Oferty specjalne</h2>
 					<p>
-						Zarezerwuj swoją pierwszą wizytę online i skorzystaj z 20% zniżki na
-						wszystkie zabiegi.
+						Skorzystaj z naszego formularza kontaktowego i otrzymaj 20% zniżki
+						na wybrane zabiegi. Zadbaj o siebie już dziś!
 					</p>
 
 					<div>

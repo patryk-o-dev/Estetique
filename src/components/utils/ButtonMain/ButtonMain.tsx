@@ -7,8 +7,8 @@ import { useRef } from "react";
 type ButtonMainProps = {
 	section?: string;
 	text: string;
-	bgc: "primary" | "transparent";
-	action: "scroll" | "book" | "link" | "none";
+	bgc: "primary" | "secondary" | "transparent";
+	action: "scroll" | "book" | "fb" | "rezobo" | "none";
 };
 
 const ButtonMain = ({ section, text, bgc, action }: ButtonMainProps) => {
@@ -16,8 +16,6 @@ const ButtonMain = ({ section, text, bgc, action }: ButtonMainProps) => {
 
 	const btnRef = useRef<HTMLButtonElement>(null);
 	const shineRef = useRef<HTMLDivElement>(null);
-
-	
 
 	const handleMouseEnter = () => {
 		if (shineRef.current) {
@@ -52,10 +50,17 @@ const ButtonMain = ({ section, text, bgc, action }: ButtonMainProps) => {
 			}
 		} else if (action === "book") {
 			console.log(`Sending appointment information and showing booking popup`);
-		} else if (action === "link") {
+		} else if (action === "fb") {
 			e.preventDefault();
 			window.open(
 				"https://www.facebook.com/profile.php?id=100063622178569",
+				"_blank",
+				"noopener,noreferrer",
+			);
+		} else if (action === "rezobo") {
+			e.preventDefault();
+			window.open(
+				"https://www.rezobo.com/salon/gabinet-kosmetyczny-esthetique/oferta",
 				"_blank",
 				"noopener,noreferrer",
 			);

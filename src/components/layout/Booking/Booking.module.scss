@@ -50,7 +50,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: vars.$spacing-3xl;
+	gap: vars.$spacing-xl;
 	padding: vars.$spacing-2xl vars.$spacing-3xl;
 	height: 100%;
 }
@@ -60,7 +60,7 @@
 	flex-direction: column;
 	gap: vars.$spacing-lg;
 	justify-content: center;
-	width: 50%;
+	width: 40%;
 
 	h2 {
 		font-size: vars.$font-3xl;
@@ -74,6 +74,14 @@
 		color: vars.$text-light;
 		line-height: 1.6;
 	}
+
+	.buttonContainer {
+		margin-top: -(vars.$spacing-lg);
+	}
+}
+
+.formBox {
+	width: 60%;
 }
 
 @media (max-width: vars.$bp-md) {
@@ -108,6 +116,16 @@
 			color: vars.$text-light;
 			line-height: 1.6;
 		}
+
+		.buttonContainer {
+			margin-top: -(vars.$spacing-xs);
+			p {
+				font-size: vars.$font-md;
+			}
+		}
+	}
+	.formBox {
+		width: 100%;
 	}
 }
 

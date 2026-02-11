@@ -9,7 +9,6 @@ import {
 	useEffect,
 	useRef,
 	useState,
-	useLayoutEffect,
 } from "react";
 import gsap from "gsap";
 
@@ -81,23 +80,12 @@ const ServicesPricing = () => {
 			price: 250.0,
 		},
 	];
-	const DEFAULT_LIST_HEIGHT = 404;
-	const [itemsPerPage, setItemsPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(0);
 	const [autoScroll, setAutoScroll] = useState(true);
 	const listRef = useRef<HTMLUListElement>(null);
 	const itemRef = useRef<HTMLLIElement>(null);
 
-	const maxPage = Math.ceil(services.length / itemsPerPage) - 1;
-
-	useLayoutEffect(() => {
-		if (listRef.current && itemRef.current) {
-			const listHeight = listRef.current.clientHeight || DEFAULT_LIST_HEIGHT;
-			const itemHeight = itemRef.current.clientHeight || 1;
-			const fit = Math.max(1, Math.floor(listHeight / itemHeight));
-			setItemsPerPage(fit);
-		}
-	}, []);
+	const maxPage = Math.ceil(services.length / 5) - 1;
 
 	const handleNext = useCallback(
 		(isUser = false) => {
@@ -164,8 +152,8 @@ const ServicesPricing = () => {
 		return () => clearTimeout(timer);
 	}, [currentPage, autoScroll, handleNext]);
 
-	const startIdx = currentPage * itemsPerPage;
-	const visibleServices = services.slice(startIdx, startIdx + itemsPerPage);
+	const startIdx = currentPage * 5;
+	const visibleServices = services.slice(startIdx, startIdx + 5);
 
 	return (
 		<section className={styles.servicesPricing} id="Services">
@@ -189,11 +177,7 @@ const ServicesPricing = () => {
 						src={servicesBackground}
 						alt="Background"
 					/>
-					<ul
-						className={styles.pricingList}
-						ref={listRef}
-						style={{ height: DEFAULT_LIST_HEIGHT }}
-					>
+					<ul className={styles.pricingList} ref={listRef}>
 						{visibleServices.map((service, index) => (
 							<li
 								key={index}
